@@ -1,0 +1,1466 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>2.1. Secuencias de datos elementales - Guía de Trabajos Prácticos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecd4686e.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../extra/css/extra.css">
+    
+    
+      
+        
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-140521258-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#21-secuencias-de-datos-elementales" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="../.." title="Guía de Trabajos Prácticos" class="md-header-nav__button md-logo" aria-label="Guía de Trabajos Prácticos">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guía de Trabajos Prácticos
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              2.1. Secuencias de datos elementales
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Teclee para comenzar búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Bienvenidos!
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../0/" class="md-tabs__link md-tabs__link--active">
+          Práctica
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../teoria/mezcla/" class="md-tabs__link">
+          Complementos Teóricos
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../complementarios/1/" class="md-tabs__link">
+          Complementarios
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guía de Trabajos Prácticos" class="md-nav__button md-logo" aria-label="Guía de Trabajos Prácticos">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Guía de Trabajos Prácticos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Bienvenidos!" class="md-nav__link">
+      Bienvenidos!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Práctica
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Práctica" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Práctica
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0/" title="0. Algortimos" class="md-nav__link">
+      0. Algortimos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      1. Elementales
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="1. Elementales" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        1. Elementales
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../1.1/" title="1.1. Datos y Estructuras" class="md-nav__link">
+      1.1. Datos y Estructuras
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../1.2/" title="1.2. Subacciones" class="md-nav__link">
+      1.2. Subacciones
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3">
+      2. Secuencias y Archivos Indexados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="2. Secuencias y Archivos Indexados" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        2. Secuencias y Archivos Indexados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        2.1. Secuencias de datos elementales
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="2.1. Secuencias de datos elementales" class="md-nav__link md-nav__link--active">
+      2.1. Secuencias de datos elementales
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-211" class="md-nav__link">
+    Ejercicio 2.1.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-212" class="md-nav__link">
+    Ejercicio 2.1.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-213" class="md-nav__link">
+    Ejercicio 2.1.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-214" class="md-nav__link">
+    Ejercicio 2.1.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-215" class="md-nav__link">
+    Ejercicio 2.1.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-216" class="md-nav__link">
+    Ejercicio 2.1.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-217" class="md-nav__link">
+    Ejercicio 2.1.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-218" class="md-nav__link">
+    Ejercicio 2.1.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-219" class="md-nav__link">
+    Ejercicio 2.1.9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2110" class="md-nav__link">
+    Ejercicio 2.1.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2111" class="md-nav__link">
+    Ejercicio 2.1.11
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2112" class="md-nav__link">
+    Ejercicio 2.1.12
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2113" class="md-nav__link">
+    Ejercicio 2.1.13
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2114" class="md-nav__link">
+    Ejercicio 2.1.14
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2115" class="md-nav__link">
+    Ejercicio 2.1.15
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2116" class="md-nav__link">
+    Ejercicio 2.1.16
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2117" class="md-nav__link">
+    Ejercicio 2.1.17
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2118" class="md-nav__link">
+    Ejercicio 2.1.18
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2119" class="md-nav__link">
+    Ejercicio 2.1.19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2120" class="md-nav__link">
+    Ejercicio 2.1.20
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2121" class="md-nav__link">
+    Ejercicio 2.1.21
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2122" class="md-nav__link">
+    Ejercicio 2.1.22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2123" class="md-nav__link">
+    Ejercicio 2.1.23
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2124" class="md-nav__link">
+    Ejercicio 2.1.24
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2125" class="md-nav__link">
+    Ejercicio 2.1.25
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2126" class="md-nav__link">
+    Ejercicio 2.1.26
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2127" class="md-nav__link">
+    Ejercicio 2.1.27
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2128" class="md-nav__link">
+    Ejercicio 2.1.28
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2129" class="md-nav__link">
+    Ejercicio 2.1.29
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2130" class="md-nav__link">
+    Ejercicio 2.1.30
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2131" class="md-nav__link">
+    Ejercicio 2.1.31
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2132" class="md-nav__link">
+    Ejercicio 2.1.32
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2.21/" title="2.2. Secuencias de datos elementales extra" class="md-nav__link">
+      2.2. Secuencias de datos elementales extra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2.2/" title="2.3. Archivos Secuenciales" class="md-nav__link">
+      2.3. Archivos Secuenciales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2.3/" title="2.4. Archivos Indexados" class="md-nav__link">
+      2.4. Archivos Indexados
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../3/" title="3. Arreglos" class="md-nav__link">
+      3. Arreglos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../4/" title="4. Listas" class="md-nav__link">
+      4. Listas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../5/" title="5. Recursividad" class="md-nav__link">
+      5. Recursividad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../x/" title="X. Parcial" class="md-nav__link">
+      X. Parcial
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Complementos Teóricos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Complementos Teóricos" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Complementos Teóricos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../teoria/mezcla/" title="Mezcla" class="md-nav__link">
+      Mezcla
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../teoria/corte/" title="Corte de Control" class="md-nav__link">
+      Corte de Control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../teoria/actualizacion/" title="Actualización" class="md-nav__link">
+      Actualización
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../teoria/arreglos/" title="Arreglos" class="md-nav__link">
+      Arreglos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../teoria/listas/" title="Listas" class="md-nav__link">
+      Listas
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Complementarios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Complementarios" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Complementarios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../complementarios/1/" title="1. Datos y Estructuras Elementales" class="md-nav__link">
+      1. Datos y Estructuras Elementales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      2. Tratamiento de Secuencias
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="2. Tratamiento de Secuencias" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        2. Tratamiento de Secuencias
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../complementarios/2.1/" title="2.1. Secuencias de datos elementales" class="md-nav__link">
+      2.1. Secuencias de datos elementales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../complementarios/2.2/" title="2.2. Archivos Secuenciales" class="md-nav__link">
+      2.2. Archivos Secuenciales
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../complementarios/3/" title="3. Tratamiento de Arreglos" class="md-nav__link">
+      3. Tratamiento de Arreglos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../complementarios/4/" title="4. Tratamiento de Listas" class="md-nav__link">
+      4. Tratamiento de Listas
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-211" class="md-nav__link">
+    Ejercicio 2.1.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-212" class="md-nav__link">
+    Ejercicio 2.1.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-213" class="md-nav__link">
+    Ejercicio 2.1.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-214" class="md-nav__link">
+    Ejercicio 2.1.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-215" class="md-nav__link">
+    Ejercicio 2.1.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-216" class="md-nav__link">
+    Ejercicio 2.1.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-217" class="md-nav__link">
+    Ejercicio 2.1.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-218" class="md-nav__link">
+    Ejercicio 2.1.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-219" class="md-nav__link">
+    Ejercicio 2.1.9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2110" class="md-nav__link">
+    Ejercicio 2.1.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2111" class="md-nav__link">
+    Ejercicio 2.1.11
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2112" class="md-nav__link">
+    Ejercicio 2.1.12
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2113" class="md-nav__link">
+    Ejercicio 2.1.13
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2114" class="md-nav__link">
+    Ejercicio 2.1.14
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2115" class="md-nav__link">
+    Ejercicio 2.1.15
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2116" class="md-nav__link">
+    Ejercicio 2.1.16
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2117" class="md-nav__link">
+    Ejercicio 2.1.17
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2118" class="md-nav__link">
+    Ejercicio 2.1.18
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2119" class="md-nav__link">
+    Ejercicio 2.1.19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2120" class="md-nav__link">
+    Ejercicio 2.1.20
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2121" class="md-nav__link">
+    Ejercicio 2.1.21
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2122" class="md-nav__link">
+    Ejercicio 2.1.22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2123" class="md-nav__link">
+    Ejercicio 2.1.23
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2124" class="md-nav__link">
+    Ejercicio 2.1.24
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2125" class="md-nav__link">
+    Ejercicio 2.1.25
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2126" class="md-nav__link">
+    Ejercicio 2.1.26
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2127" class="md-nav__link">
+    Ejercicio 2.1.27
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2128" class="md-nav__link">
+    Ejercicio 2.1.28
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2129" class="md-nav__link">
+    Ejercicio 2.1.29
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2130" class="md-nav__link">
+    Ejercicio 2.1.30
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2131" class="md-nav__link">
+    Ejercicio 2.1.31
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2132" class="md-nav__link">
+    Ejercicio 2.1.32
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="21-secuencias-de-datos-elementales">2.1. Secuencias de datos elementales<a class="headerlink" href="#21-secuencias-de-datos-elementales" title="Permanent link">&para;</a></h1>
+<h3 id="ejercicio-211">Ejercicio 2.1.1<a class="headerlink" href="#ejercicio-211" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dada una secuencia de letras del alfabeto que finaliza con una marca '*', contar cuantas letras "A" hay en la secuencia.</p>
+<h3 id="ejercicio-212">Ejercicio 2.1.2<a class="headerlink" href="#ejercicio-212" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dada una secuencia de letras del alfabeto que finaliza con la letra "Z", contar cuantas consonantes hay en la secuencia. </p>
+<h3 id="ejercicio-213">Ejercicio 2.1.3<a class="headerlink" href="#ejercicio-213" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se dispone de una secuencia de caracteres y se desea obtener una secuencia de salida que resulte de copiar la secuencia de entrada, descartando el caracter "$".</p>
+<h3 id="ejercicio-214">Ejercicio 2.1.4<a class="headerlink" href="#ejercicio-214" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se dispone de una secuencia de números de socios, y se desea saber la cantidad de socios que están registrados.</p>
+<h3 id="ejercicio-215">Ejercicio 2.1.5<a class="headerlink" href="#ejercicio-215" title="Permanent link">&para;</a></h3>
+<hr />
+<p>La secuencia de  socios del problema anterior tiene el inconveniente  de que los números están ordenados pero no son correlativos. Se desea generar una secuencia que contenga los números de socios que no figuran en la secuencia de socios.</p>
+<h3 id="ejercicio-216">Ejercicio 2.1.6<a class="headerlink" href="#ejercicio-216" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dada una secuencia de enteros que almacena la cantidad de habitantes de las ciudades capitales de las 23 provincias de la República Argentina, discriminados 4 categorías: menores de 18 años (varones y mujeres) y mayores de 18 años (varones y mujeres). Se pide determinar la población total y los siguientes porcentajes: masculinos, femeninos, mayores de 18 y menores de 18.</p>
+<h3 id="ejercicio-217">Ejercicio 2.1.7<a class="headerlink" href="#ejercicio-217" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se tiene una secuencia de enteros que contiene todos los CUIT de los empleados de una empresa, la misma termina con el CUIT 0. Para evitar largas esperas en los días de pago, la empresa necesita organizarlos de acuerdo al último dígito de su documento, generar una secuencia con los CUIT de las personas que su número de documento termine con 0, 1, 2 o 3.</p>
+<h3 id="ejercicio-218">Ejercicio 2.1.8<a class="headerlink" href="#ejercicio-218" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Teniendo en cuenta el ejercicio anterior, se solicita que la secuencia de salida sea una secuencia de caracteres y los CUIT se separen unos de otros con el caracter "-".</p>
+<h3 id="ejercicio-219">Ejercicio 2.1.9<a class="headerlink" href="#ejercicio-219" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se dispone de una secuencia de caracteres.  Se desea determinar la cantidad de palabras que comienzan con la letra 'I'.</p>
+<h3 id="ejercicio-2110">Ejercicio 2.1.10<a class="headerlink" href="#ejercicio-2110" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se dispone de una secuencia de caracteres.  Se desea permita contar la cantidad de palabras que comienzan con una letra dada.</p>
+<h3 id="ejercicio-2111">Ejercicio 2.1.11<a class="headerlink" href="#ejercicio-2111" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dada una secuencia de caracteres, determinar la cantidad de palabras de 4 caracteres (letras)</p>
+<h3 id="ejercicio-2112">Ejercicio 2.1.12<a class="headerlink" href="#ejercicio-2112" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se dispone de una secuencia de caracteres.  Se desea listar las palabras que comiencen con "ALG".</p>
+<h3 id="ejercicio-2113">Ejercicio 2.1.13<a class="headerlink" href="#ejercicio-2113" title="Permanent link">&para;</a></h3>
+<hr />
+<p>A partir del ejercicio anterior, determinar el porcentaje que representan las palabras que comienzan con "ALG"
+sobre todas las palabras de la secuencia.</p>
+<h3 id="ejercicio-2114">Ejercicio 2.1.14<a class="headerlink" href="#ejercicio-2114" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se dispone de una secuencia de caracteres y se desea saber la cantidad de caracteres (incluidos los espacios) que existen entre una coma y la siguiente.  Se debe considerar que puede haber más de un par de comas, y que las subsecuencias inicial y final deben descartarse por no cumplir la condición enunciada. Supóngase que las comas son siempre contiguas al último caracter de la palabra.</p>
+<h3 id="ejercicio-2115">Ejercicio 2.1.15<a class="headerlink" href="#ejercicio-2115" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se desea saber la cantidad promedio de palabras que contienen las oraciones de una secuencia de caracteres.  Supóngase que los puntos son siempre contiguos al último caracter de la palabra. La secuencia finaliza con una marca.</p>
+<h3 id="ejercicio-2116">Ejercicio 2.1.16<a class="headerlink" href="#ejercicio-2116" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se dispone de una secuencia de números de DNI asignados a un circuito electoral, generar otra secuencia de números que contenga los DNI múltiplos de 3.</p>
+<h3 id="ejercicio-2117">Ejercicio 2.1.17<a class="headerlink" href="#ejercicio-2117" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se desea calcular el costo de un  telegrama,  que se determina en función del número de palabras (que vale V1 cada una),  salvo que el promedio de letras por palabra supere las cinco letras, caso en que cada palabra vale V2.</p>
+<h3 id="ejercicio-2118">Ejercicio 2.1.18<a class="headerlink" href="#ejercicio-2118" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escribir un algoritmo que produzca una secuencia de salida que contenga una oración formada por por las palabras en posición par de cada oración de una secuencia texto de entrada, que además comienzan con la letra 'M'.</p>
+<h3 id="ejercicio-2119">Ejercicio 2.1.19<a class="headerlink" href="#ejercicio-2119" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dada una secuencia de caracteres, generar otra secuencia con todas las palabras de tres caracteres. Informar el porcentaje de las mismas, sobre el total de palabras de la secuencia de entrada. Considerar que puede haber más de un blanco entre palabras.</p>
+<h3 id="ejercicio-2120">Ejercicio 2.1.20<a class="headerlink" href="#ejercicio-2120" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se dispone de dos secuencias texto formadas por oraciones bimembres (sujeto y predicado, separados por comas ‘,’). Se desea una secuencia texto de salida formada por oraciones bimembres, de la siguiente forma:  </p>
+<p><em>El sujeto, de la secuencia 1, y el predicado, de la secuencia 2.</em></p>
+<p>Al finalizar informar cuantas oraciones tiene cada secuencia.</p>
+<h3 id="ejercicio-2121">Ejercicio 2.1.21<a class="headerlink" href="#ejercicio-2121" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se dispone de dos secuencias texto formadas por oraciones bimembres (sujeto y predicado, separados por comas ‘,’). Se desea una secuencia texto de salida formada por oraciones bimembres, de la siguiente forma:  </p>
+<p><em>El sujeto, de la secuencia 2, y el predicado, de la secuencia 1.</em></p>
+<p>Al finalizar informar cuantas oraciones tiene cada secuencia.</p>
+<h3 id="ejercicio-2122">Ejercicio 2.1.22<a class="headerlink" href="#ejercicio-2122" title="Permanent link">&para;</a></h3>
+<hr />
+<p>La empresa Ideas Argentinas S.A. posee datos de sus empleados en dos secuencias de caracteres; la primera secuencia (Sec1) formada por los nombres (uno por persona) de los empleados separados por blancos y la segunda secuencia (Sec2) posee los números de documento de cada uno de los empleados (palabras de 8 dígitos numéricos). 
+Ambas secuencias poseen la misma cantidad de datos, es decir al primer nombre de la primera secuencia le corresponde el primer número de documento de la segunda secuencia y así sucesivamente. La secuencia de números de documentos no posee espacios en blanco ni ningún otro tipo de caracter que separe un número de documento de otro.<br />
+A la empresa le interesa tener en una nueva secuencia (Sec3) los datos de todas aquellas personas que cumplan la condición de que el nombre se encuentre en una posición impar.
+La nueva secuencia debe generarse de la siguiente manera: el número de documento seguido (sin espacios) por una coma y luego (sin espacios) por el nombre y seguido al nombre un #. </p>
+<h3 id="ejercicio-2123">Ejercicio 2.1.23<a class="headerlink" href="#ejercicio-2123" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Realice un algoritmo para el enunciado del ejercicio 1.22, pero considerando que los datos que se deben copiar en la Sec3 son los de aquellas personas que cumplan la condición de que: el número de documento comienza con un número impar.</p>
+<h3 id="ejercicio-2124">Ejercicio 2.1.24<a class="headerlink" href="#ejercicio-2124" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Realice un algoritmo para el enunciado del ejercicio 1.22, pero considerando que los datos que se deben copiar en la Sec3 son los de aquellas personas que cumplan la condición de que: el nombre no comienza con una vocal.</p>
+<h3 id="ejercicio-2125">Ejercicio 2.1.25<a class="headerlink" href="#ejercicio-2125" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dada una secuencia texto de entrada que contiene palabras alfanuméricas, escribir un algoritmo que genere dos secuencias de salida. Una de ellas contendrá solo las palabras de la secuencia original que comienzan con vocal, en las cuales se reemplazarán todas las vocales por ‘#’, por ejemplo: entrada 'avión1', salida '#v##n1' y la otra será una secuencia numérica en la que se almacenarán las cantidades de vocales que se encontraron en cada una de las palabras que cumplieron la condición. Por final de proceso se deberá informar el promedio de palabras por oración.</p>
+<h3 id="ejercicio-2126">Ejercicio 2.1.26<a class="headerlink" href="#ejercicio-2126" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se posee 2 secuencias (S1 y S2) con las cuales se desea generar una nueva secuencia (SAL) donde se intercalen las palabras de las secuencias de entrada, de la siguiente manera: copiar de S1 aquellas palabras que empiezan y terminan con la misma letra y de S2 aquellas palabras que posean al menos un digito numérico y además estén en posición par.</p>
+<h3 id="ejercicio-2127">Ejercicio 2.1.27<a class="headerlink" href="#ejercicio-2127" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Elaborar un procedimiento que dada una secuencia de caracteres como entrada genere otra del mismo tipo como salida.<br />
+La secuencia de caracteres que se recibe incluye números de tarjetas de crédito, donde cada número  tiene 16 dígitos. Se desea obtener como resultado una nueva secuencia de salida con los números de tarjetas válidos.<br />
+El algoritmo para la validación de números de tarjetas de crédito es el siguiente:
+Para entender mejor el método usaremos un número correcto: 4013-7001-0977-4812, al que nos referiremos en el texto. Nos centramos en los caracteres que ocupan posiciones impares.  </p>
+<p>4 <strong>0</strong> 1 <strong>3</strong> 7 <strong>0</strong> 0 <strong>1</strong> 0 <strong>9</strong> 7 <strong>7</strong> 4 <strong>8</strong> 1 <strong>2</strong>  </p>
+<p>Por cada uno de ellos obtenemos el doble del valor que representan. Si el número resultante es menor que 9, se deja tal cual, en caso contrario, se le resta 9. En nuestro ejemplo: 4 * 2 = 8; 1 * 2 = 2; 7 * 2 = 14, mayor que nueve, se le resta 9. 14 - 9 = 5; y así sucesivamente. Si el número resultante de la suma de las multiplicaciones y de los dígitos en posición par, es múltiplo de 10, y a la vez menor o igual a 150, es un número de tarjeta válido.  </p>
+<p>Para nuestro ejemplo: 8+0+2+3+5+0+0+1+0+9+5+7+8+8+2+2 = 60; por lo tanto el número es válido.</p>
+<h3 id="ejercicio-2128">Ejercicio 2.1.28<a class="headerlink" href="#ejercicio-2128" title="Permanent link">&para;</a></h3>
+<hr />
+<p>La galería de pintura y arte nacional, PINTA DE ARGENTINA, almacena información sobre los artistas y sus obras de arte en secuencias de caracteres. Durante todo el año, las obras de arte son expuestas en eventos de subasta y exposición, en los cuales se comercializan al público en general.<br />
+A fin de año la Comisión Directiva de la Galería solicita que, a partir de toda esa información, se generen algunos informes.
+Se debe tener en cuenta lo siguiente:  </p>
+<ul>
+<li>En la secuencia ARTISTAS, se almacena el nombre de cada artista, lugar de nacimiento, edad, estilo de arte ('R' – Renacentista, 'M' – Arte Moderno, 'B' – Barroco, 'S' – Surrealismo) y cantidad de obras por artista. </li>
+<li>Los datos de cada artista están separados entre si por el símbolo '+' y finalizan con el símbolo '?'.</li>
+<li>En la secuencia OBRAS, se almacena el nombre de la obra,  el año en que fue hecha, su precio, precedido siempre del signo '$' (solo 3 digitos) y su estado ('V' – Vendido, 'R' – Reservado, 'U' – Obra Única).</li>
+<li>Todos los datos de las obras están separados por el símbolo ',' y finalizan con el símbolo '/'.</li>
+<li>El creador de cada obra se determina de acuerdo al dato 'cantidad de obras' de la secuencia ARTISTAS, por ej.: el autor RENE BARTOL tiene 2 obras, por lo cual las primeras 2 obras de la secuencia OBRAS le pertenecen, las siguientes 6, pertenecen a JUAN B JUSTO, etc.  </li>
+</ul>
+<p>A continuación un ejemplo de ambas secuencias:</p>
+<p><strong>SECUENCIA ARTISTAS</strong><br />
+<code>RENE BARTOL+ROSARIO+34+M+2?JUAN B JUSTO+NEUQUEN+61+R+5?……..</code></p>
+<p><strong>SECUENCIAS OBRAS</strong><br />
+<code>SOL Y PARANA,1997,$913,V/GRITO DE ESPERANZA,2003,$235,R/PENAS,1997,$781,V/………</code></p>
+<p>A partir de lo expuesto anteriormente, se pide:  </p>
+<ol>
+<li>Generar una secuencia de salida con información de los artistas Renacentistas. La secuencia debe contener el nombre del artista, su estilo de arte, seguido de sus obras (nombre y año de creación). Los datos correspondientes al mismo artista deben separarse entre sí con el signo '+' y finalizar con el signo '?'.  </li>
+<li>Al final del proceso informar:  <ol>
+<li>la mayor cantidad de obras vendidas por un artista.  </li>
+<li>el porcentaje de obras de artistas "renacentistas" sobre el total de obras.</li>
+</ol>
+</li>
+</ol>
+<h3 id="ejercicio-2129">Ejercicio 2.1.29<a class="headerlink" href="#ejercicio-2129" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dado el ejercicio anterior, pensar: cómo cambia el algoritmo solución en caso de que el 'estilo de arte' se indique al principio de los datos de cada artista en la secuencia de artistas? Por qué? Hacer el algoritmo.</p>
+<h3 id="ejercicio-2130">Ejercicio 2.1.30<a class="headerlink" href="#ejercicio-2130" title="Permanent link">&para;</a></h3>
+<hr />
+<p>El siguiente es un ejercicio del primer recuperatorio del primer parcial del año 2017:</p>
+<p>La AFIP dispone de dos secuencias de caracteres:  </p>
+<ul>
+<li>
+<p><strong>PERSONAS</strong>
+Contiene los siguientes datos de personas físicas o Empresas: nombre completo y fecha (de nacimiento o de creación, respectivamente), agrupadas por provincias. No existe carácter separador entre personas, el fin de cada provincia se indica con el carácter &amp;.<br />
+Ejemplo: <code>María Góm-14021977Carlos Alberto Rodriguez-20061990....&amp;Lionel Messi-24061987....&amp;....{fin}</code>
+<code>nombre-ddmmaaaanombre-ddmmaa....&amp;</code></p>
+</li>
+<li>
+<p><strong>CUIT</strong>: contiene la Clave Unica de Identificación Tributaria de las personas de la secuencia PERSONAS (existiendo una correspondencia una a una, es decir la primer persona con el primer cuit, la segunda con el segundo y asi sucesivamente)
+Cada número de CUIT se almacena por medio de 11 caracteres: los 2 primeros indican el tipo, los 6 siguientes el número de DNI (en caso de personas físicas) o de sociedad (en caso de Empresas) y el último es un digito verificador.<br />
+Ejemplo: <code>**20123456786**23134567823**30712434445**</code></p>
+</li>
+</ul>
+<p>Los tipos pueden ser:20, 23, 24 y 27 para Personas Físicas y 30, 33 y 34 para Empresas.</p>
+<p>Se solicita.</p>
+<ol>
+<li>Generar una secuencia de salida que contenga DNI, y el nombre completo de todas las personas físicas cuyo nombre comience con vocal.</li>
+<li>Para cada Provincia calcular el total de personas físicas y el porcentaje sobre el total de la provincia.</li>
+</ol>
+<h3 id="ejercicio-2131">Ejercicio 2.1.31<a class="headerlink" href="#ejercicio-2131" title="Permanent link">&para;</a></h3>
+<hr />
+<p>El siguiente es un ejercicio del primer parcial del año 2017:
+La empresa TICKET-TEC ha generado una secuencia de caracteres con información de sus ventas para los eventos de los últimos 3 meses, cuya estructura se describe a continuación.
+Inicialmente existe el nombre del local de los eventos, cuya longitud se desconoce, termina con un #; a continuación se tiene la información de todos los tickets vendidos para ese local, separado cada ticket del siguiente con el caracter !, y al final de todas las ventas para ese local, el caracter &amp;. Por último la marca de fin de secuencia. También en el caso de butaca se desconoce la longitud del número, termina con un guión.</p>
+<p><strong>EJEMPLO</strong><br />
+<code>Teatro Opera#270520171A45-2030!270520173D120-2230!280520172C233-2030!&amp;Galpon de las
+Luces#070720171C5-2030!301020172A233-2230!&amp;{fin}</code></p>
+<p><code>local de eventos#Fecha del evento[ddmmaaaa] codigo del evento[1..3]  butaca [sector [A,C o D], número] - horario evento [hhmm]!</code></p>
+<p>Solo hay dos horarios 20:30 y 22:30.</p>
+<p>La empresa solicita un algoritmo que cumpla con las siguientes consignas:</p>
+<ol>
+<li>
+<p>Generar una nueva secuencia de salida con el mismo formato, que contenga los tickets correspondientes a un mes ingresado por el usuario.</p>
+</li>
+<li>
+<p>Informar total general de tickets vendidos, total de tickets por evento y porcentaje de cada uno sobre el total general.</p>
+</li>
+</ol>
+<h3 id="ejercicio-2132">Ejercicio 2.1.32<a class="headerlink" href="#ejercicio-2132" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se posee una secuencia con los mensajes internos enviados entre los empleados de una empresa, la secuencia está formada de la siguiente manera: 3 caracteres para el destino, 3 caracteres para el origen, 3 caracteres que indican la cantidad de caracteres que tiene el mensaje y el mensaje. No existe ningún carácter que separe un mensaje de otro.
+se pide:</p>
+<ol>
+<li>Escribir una secuencia de salida con todos los mensajes (incluyendo origen y destino) que van hacia el área de Mantenimiento (que destino comience con 1).</li>
+<li>Contar la cantidad de mensajes que se dirigen hacia el área de sistemas (que destino comience con 23).</li>
+</ol>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../1.2/" title="1.2. Subacciones" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                1.2. Subacciones
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../2.21/" title="2.2. Secuencias de datos elementales extra" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                2.2. Secuencias de datos elementales extra
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+
+        Algoritmos y Estructuras de Datos - 
+        
+        <a href="http://www.frre.utn.edu.ar">UTN FRRe</a>
+
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://github.com/aed-frre/site" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "", "search.config.separator": "", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs", "instant"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../extra/js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

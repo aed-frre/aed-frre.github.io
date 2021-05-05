@@ -1,0 +1,1823 @@
+
+
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>1.1. Datos y Estructuras - Guía de Trabajos Prácticos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.89dc9fe3.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecd4686e.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../extra/css/extra.css">
+    
+    
+      
+        
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-140521258-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#11-datos-y-estructuras-elementales" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Cabecera">
+    <a href="../.." title="Guía de Trabajos Prácticos" class="md-header-nav__button md-logo" aria-label="Guía de Trabajos Prácticos">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Guía de Trabajos Prácticos
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              1.1. Datos y Estructuras
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Teclee para comenzar búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Bienvenidos!
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../0/" class="md-tabs__link md-tabs__link--active">
+          Práctica
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../teoria/mezcla/" class="md-tabs__link">
+          Complementos Teóricos
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../complementarios/1/" class="md-tabs__link">
+          Complementarios
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guía de Trabajos Prácticos" class="md-nav__button md-logo" aria-label="Guía de Trabajos Prácticos">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Guía de Trabajos Prácticos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Bienvenidos!" class="md-nav__link">
+      Bienvenidos!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Práctica
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Práctica" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Práctica
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0/" title="0. Algortimos" class="md-nav__link">
+      0. Algortimos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      1. Elementales
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="1. Elementales" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        1. Elementales
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        1.1. Datos y Estructuras
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="1.1. Datos y Estructuras" class="md-nav__link md-nav__link--active">
+      1.1. Datos y Estructuras
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#datos-elementales" class="md-nav__link">
+    Datos Elementales
+  </a>
+  
+    <nav class="md-nav" aria-label="Datos Elementales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-111" class="md-nav__link">
+    Ejercicio 1.1.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-112" class="md-nav__link">
+    Ejercicio 1.1.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-113" class="md-nav__link">
+    Ejercicio 1.1.3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-114" class="md-nav__link">
+    Ejercicio 1.1.4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructuras-secuenciales" class="md-nav__link">
+    Estructuras Secuenciales
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructuras Secuenciales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1151" class="md-nav__link">
+    Ejercicio 1.1.5.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1152" class="md-nav__link">
+    Ejercicio 1.1.5.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1153" class="md-nav__link">
+    Ejercicio 1.1.5.3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1154" class="md-nav__link">
+    Ejercicio 1.1.5.4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1155" class="md-nav__link">
+    Ejercicio 1.1.5.5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1156" class="md-nav__link">
+    Ejercicio 1.1.5.6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1157" class="md-nav__link">
+    Ejercicio 1.1.5.7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructuras-condicionales-y-repetitivas" class="md-nav__link">
+    Estructuras condicionales y repetitivas
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructuras condicionales y repetitivas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-116" class="md-nav__link">
+    Ejercicio 1.1.6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-117" class="md-nav__link">
+    Ejercicio 1.1.7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-118" class="md-nav__link">
+    Ejercicio 1.1.8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-119" class="md-nav__link">
+    Ejercicio 1.1.9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1110" class="md-nav__link">
+    Ejercicio 1.1.10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1111" class="md-nav__link">
+    Ejercicio 1.1.11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1112" class="md-nav__link">
+    Ejercicio 1.1.12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1113" class="md-nav__link">
+    Ejercicio 1.1.13
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1114" class="md-nav__link">
+    Ejercicio 1.1.14
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1115" class="md-nav__link">
+    Ejercicio 1.1.15
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1116" class="md-nav__link">
+    Ejercicio 1.1.16
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1117" class="md-nav__link">
+    Ejercicio 1.1.17
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1118" class="md-nav__link">
+    Ejercicio 1.1.18
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1119" class="md-nav__link">
+    Ejercicio 1.1.19
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1120" class="md-nav__link">
+    Ejercicio 1.1.20
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1121" class="md-nav__link">
+    Ejercicio 1.1.21
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1122" class="md-nav__link">
+    Ejercicio 1.1.22
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1123" class="md-nav__link">
+    Ejercicio 1.1.23
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1124" class="md-nav__link">
+    Ejercicio 1.1.24
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1125" class="md-nav__link">
+    Ejercicio 1.1.25
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1126" class="md-nav__link">
+    Ejercicio 1.1.26
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1127" class="md-nav__link">
+    Ejercicio 1.1.27
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1128" class="md-nav__link">
+    Ejercicio 1.1.28
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1129" class="md-nav__link">
+    Ejercicio 1.1.29
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1130" class="md-nav__link">
+    Ejercicio 1.1.30
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1131" class="md-nav__link">
+    Ejercicio 1.1.31
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1132" class="md-nav__link">
+    Ejercicio 1.1.32
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1133" class="md-nav__link">
+    Ejercicio 1.1.33
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1134" class="md-nav__link">
+    Ejercicio 1.1.34
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1135" class="md-nav__link">
+    Ejercicio 1.1.35
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1136" class="md-nav__link">
+    Ejercicio 1.1.36
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../1.2/" title="1.2. Subacciones" class="md-nav__link">
+      1.2. Subacciones
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      2. Secuencias y Archivos Indexados
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="2. Secuencias y Archivos Indexados" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        2. Secuencias y Archivos Indexados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2.1/" title="2.1. Secuencias de datos elementales" class="md-nav__link">
+      2.1. Secuencias de datos elementales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2.21/" title="2.2. Secuencias de datos elementales extra" class="md-nav__link">
+      2.2. Secuencias de datos elementales extra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2.2/" title="2.3. Archivos Secuenciales" class="md-nav__link">
+      2.3. Archivos Secuenciales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2.3/" title="2.4. Archivos Indexados" class="md-nav__link">
+      2.4. Archivos Indexados
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../3/" title="3. Arreglos" class="md-nav__link">
+      3. Arreglos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../4/" title="4. Listas" class="md-nav__link">
+      4. Listas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../5/" title="5. Recursividad" class="md-nav__link">
+      5. Recursividad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../x/" title="X. Parcial" class="md-nav__link">
+      X. Parcial
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Complementos Teóricos
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Complementos Teóricos" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Complementos Teóricos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../teoria/mezcla/" title="Mezcla" class="md-nav__link">
+      Mezcla
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../teoria/corte/" title="Corte de Control" class="md-nav__link">
+      Corte de Control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../teoria/actualizacion/" title="Actualización" class="md-nav__link">
+      Actualización
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../teoria/arreglos/" title="Arreglos" class="md-nav__link">
+      Arreglos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../teoria/listas/" title="Listas" class="md-nav__link">
+      Listas
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Complementarios
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Complementarios" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Complementarios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../complementarios/1/" title="1. Datos y Estructuras Elementales" class="md-nav__link">
+      1. Datos y Estructuras Elementales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      2. Tratamiento de Secuencias
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="2. Tratamiento de Secuencias" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        2. Tratamiento de Secuencias
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../complementarios/2.1/" title="2.1. Secuencias de datos elementales" class="md-nav__link">
+      2.1. Secuencias de datos elementales
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../complementarios/2.2/" title="2.2. Archivos Secuenciales" class="md-nav__link">
+      2.2. Archivos Secuenciales
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../complementarios/3/" title="3. Tratamiento de Arreglos" class="md-nav__link">
+      3. Tratamiento de Arreglos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../complementarios/4/" title="4. Tratamiento de Listas" class="md-nav__link">
+      4. Tratamiento de Listas
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#datos-elementales" class="md-nav__link">
+    Datos Elementales
+  </a>
+  
+    <nav class="md-nav" aria-label="Datos Elementales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-111" class="md-nav__link">
+    Ejercicio 1.1.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-112" class="md-nav__link">
+    Ejercicio 1.1.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-113" class="md-nav__link">
+    Ejercicio 1.1.3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-114" class="md-nav__link">
+    Ejercicio 1.1.4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructuras-secuenciales" class="md-nav__link">
+    Estructuras Secuenciales
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructuras Secuenciales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1151" class="md-nav__link">
+    Ejercicio 1.1.5.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1152" class="md-nav__link">
+    Ejercicio 1.1.5.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1153" class="md-nav__link">
+    Ejercicio 1.1.5.3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1154" class="md-nav__link">
+    Ejercicio 1.1.5.4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1155" class="md-nav__link">
+    Ejercicio 1.1.5.5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1156" class="md-nav__link">
+    Ejercicio 1.1.5.6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1157" class="md-nav__link">
+    Ejercicio 1.1.5.7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructuras-condicionales-y-repetitivas" class="md-nav__link">
+    Estructuras condicionales y repetitivas
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructuras condicionales y repetitivas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-116" class="md-nav__link">
+    Ejercicio 1.1.6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-117" class="md-nav__link">
+    Ejercicio 1.1.7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-118" class="md-nav__link">
+    Ejercicio 1.1.8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-119" class="md-nav__link">
+    Ejercicio 1.1.9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1110" class="md-nav__link">
+    Ejercicio 1.1.10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1111" class="md-nav__link">
+    Ejercicio 1.1.11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1112" class="md-nav__link">
+    Ejercicio 1.1.12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1113" class="md-nav__link">
+    Ejercicio 1.1.13
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1114" class="md-nav__link">
+    Ejercicio 1.1.14
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1115" class="md-nav__link">
+    Ejercicio 1.1.15
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1116" class="md-nav__link">
+    Ejercicio 1.1.16
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1117" class="md-nav__link">
+    Ejercicio 1.1.17
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1118" class="md-nav__link">
+    Ejercicio 1.1.18
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1119" class="md-nav__link">
+    Ejercicio 1.1.19
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1120" class="md-nav__link">
+    Ejercicio 1.1.20
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1121" class="md-nav__link">
+    Ejercicio 1.1.21
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1122" class="md-nav__link">
+    Ejercicio 1.1.22
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1123" class="md-nav__link">
+    Ejercicio 1.1.23
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1124" class="md-nav__link">
+    Ejercicio 1.1.24
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1125" class="md-nav__link">
+    Ejercicio 1.1.25
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1126" class="md-nav__link">
+    Ejercicio 1.1.26
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1127" class="md-nav__link">
+    Ejercicio 1.1.27
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1128" class="md-nav__link">
+    Ejercicio 1.1.28
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1129" class="md-nav__link">
+    Ejercicio 1.1.29
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1130" class="md-nav__link">
+    Ejercicio 1.1.30
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1131" class="md-nav__link">
+    Ejercicio 1.1.31
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1132" class="md-nav__link">
+    Ejercicio 1.1.32
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1133" class="md-nav__link">
+    Ejercicio 1.1.33
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1134" class="md-nav__link">
+    Ejercicio 1.1.34
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1135" class="md-nav__link">
+    Ejercicio 1.1.35
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1136" class="md-nav__link">
+    Ejercicio 1.1.36
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="11-datos-y-estructuras-elementales">1.1. Datos y Estructuras Elementales<a class="headerlink" href="#11-datos-y-estructuras-elementales" title="Permanent link">&para;</a></h1>
+<h2 id="datos-elementales">Datos Elementales<a class="headerlink" href="#datos-elementales" title="Permanent link">&para;</a></h2>
+<h3 id="ejercicio-111">Ejercicio 1.1.1<a class="headerlink" href="#ejercicio-111" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Encuentre el valor de la variable RESULT después de la ejecución de las siguientes secuencias de operaciones. Realizar prueba de escritorio.</p>
+<pre><code>RESULT := 5 + 2**3*2;
+</code></pre>
+<pre><code>X := 2; Y := 3;
+RESULT := X**Y - X;
+</code></pre>
+<pre><code>UNO := 10; DOS := 200;
+RESULT := ABSO (UNO - DOS);
+UNO := TRUNC ( RESULT / 3 ) - UNO ** 2;
+RESULT := (DOS - UNO) * 2;
+</code></pre>
+<pre><code>VBLE1 := 10; VBLE2 := 3;
+RESULT := TRUNC (VBLE1 / VBLE2);
+VBLE1 := VBLE1 + VBLE2;
+RESULT := ABSO (VBLE2 - VBLE1) ** 2;
+RESULT := RESULT * 0,1;
+</code></pre>
+<pre><code>X := 10; RESULT := 3;
+TRES := ABSO (RESULT - X) + 2 * RESULT;
+X := REDOND (TRES / 2);
+Z := X MOD RESULT;
+RESULT := (2*(-5) + X)**2;
+</code></pre>
+<pre><code>UNO := 1; DOS := 2; TRES := 4;
+DOS := ABSO (UNO - TRES);
+RESULT := DOS * TRES;
+</code></pre>
+<h3 id="ejercicio-112">Ejercicio 1.1.2<a class="headerlink" href="#ejercicio-112" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Indique en cuáles de los  siguientes pares es importante el orden de los enunciados. Es decir, que si se modifica el orden de ellos cambian los resultados (supóngase X&lt;&gt;Y, Y&lt;&gt;Z, Z&lt;&gt;X). Justifique su respuesta.</p>
+<pre><code>X:=Y
+Y:=Z 
+</code></pre>
+<pre><code>X:=Y
+Z:=X
+</code></pre>
+<pre><code>X:=Z    
+X:=Y
+</code></pre>
+<pre><code>Z:=Y
+X:=Y
+</code></pre>
+<h3 id="ejercicio-113">Ejercicio 1.1.3<a class="headerlink" href="#ejercicio-113" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Complete las siguientes frases: </p>
+<ul>
+<li>
+<p>Una ..........................  es un acontecimiento producido por un actor,  que tiene lugar durante un período de tiempo ...........................  y produce un ................................................... bien determinado.</p>
+</li>
+<li>
+<p>El instante de ...................... de la acción se denomina Ti y el instante de ......................................  se denomina Tf.</p>
+</li>
+<li>
+<p>El  conjunto de los valores en el instante t dado del  desarrollo del acontecimiento se denomina ................................ en el instante t.</p>
+</li>
+</ul>
+<h3 id="ejercicio-114">Ejercicio 1.1.4<a class="headerlink" href="#ejercicio-114" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Relacionar las columnas</p>
+<table>
+<thead>
+<tr>
+<th>Definicion</th>
+<th>Concepto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Conjunto de fenómenos organizados en el tiempo y concebido como activo.</td>
+<td>a. Programa</td>
+</tr>
+<tr>
+<td>2. Descripción de un esquema de comportamiento.</td>
+<td>b. Proceso</td>
+</tr>
+<tr>
+<td>3. Algoritmo destinado a gobernar una máquina real.</td>
+<td>c. Máquina</td>
+</tr>
+<tr>
+<td>4. Mecanismo capaz de generar acciones que tienen lugar según un esquema determinado.</td>
+<td>d. Algoritmo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="estructuras-secuenciales">Estructuras Secuenciales<a class="headerlink" href="#estructuras-secuenciales" title="Permanent link">&para;</a></h2>
+<h3 id="ejercicio-1151">Ejercicio 1.1.5.1<a class="headerlink" href="#ejercicio-1151" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escribir un programa que permita calcular el precio de un artículo para un año dado, considerando que la inflación es del 4 por 100 anual.</p>
+<p>La fórmula del precio es: <code>P = C * (1 + R) ^ (N - A)</code></p>
+<p>C - Precio actual.<br />
+N - Año futuro.<br />
+R - Tasa de Inflación.<br />
+A - Año actual. </p>
+<h3 id="ejercicio-1152">Ejercicio 1.1.5.2<a class="headerlink" href="#ejercicio-1152" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Las raíces de una ecuación de segundo grado $ax^2+bx+c=0$ son reales si y sólo si el discriminante dado por $(b2-4ac)$ no es negativo. Se desea leer el valor de los coeficientes $a$, $b$, $c$ e imprimir el resultado del discriminante. Realizar prueba de escritorio.</p>
+<h3 id="ejercicio-1153">Ejercicio 1.1.5.3<a class="headerlink" href="#ejercicio-1153" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se desea comprar una PC y una impresora. Calcular el precio total: el cual está dado por la suma de los precios de costos, los porcentajes de ganancia del vendedor y un 21% de IVA. Supóngase una ganancia del vendedor del 12% por la PC y 7% por la impresora. Se leen los costos y se imprimen el precio total de ventas.</p>
+<h3 id="ejercicio-1154">Ejercicio 1.1.5.4<a class="headerlink" href="#ejercicio-1154" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se desea calcular la superficie de un trapecio, para la cual se ingresa la longitud de ambas bases y la altura. En base a la fórmula:</p>
+<p>$$S = \frac{(B_{may} + B_{men}) \times h}{2}$$</p>
+<p>Finalizando el proceso, emitir dicha superficie y los valores ingresados.</p>
+<h3 id="ejercicio-1155">Ejercicio 1.1.5.5<a class="headerlink" href="#ejercicio-1155" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se desea calcular  el valor de la sección ($S$) de un conductor, la cual se determina en función de la corriente eléctrica $I$ y de la conductividad $C$ del material ($C=I/S$).  Además, a la sección así obtenida se le incrementa un 25% por razones de seguridad.</p>
+<h3 id="ejercicio-1156">Ejercicio 1.1.5.6<a class="headerlink" href="#ejercicio-1156" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Realizar un programa que lea dos número complejos, $(a,b)$ y $(c,d)$, y calcule su producto:</p>
+<p>$$(a,b) * (c,d) = (ac - db, ad + bc)$$</p>
+<h3 id="ejercicio-1157">Ejercicio 1.1.5.7<a class="headerlink" href="#ejercicio-1157" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escriba un algoritmo que halle la media geométrica de tres valores $X$, $Y$, $Z$. Este debe emitir los tres valores por separado y luego el valor medio. La media geométrica es igual a $(X \times Y \times Z)/3$</p>
+<h2 id="estructuras-condicionales-y-repetitivas">Estructuras condicionales y repetitivas<a class="headerlink" href="#estructuras-condicionales-y-repetitivas" title="Permanent link">&para;</a></h2>
+<h3 id="ejercicio-116">Ejercicio 1.1.6<a class="headerlink" href="#ejercicio-116" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escriba un algoritmo que permita ingresar 3 valores numéricos y determine cuál es el mayor, el medio y el menor.
+(era el 3 de los complementarios)</p>
+<h3 id="ejercicio-117">Ejercicio 1.1.7<a class="headerlink" href="#ejercicio-117" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escriba un algoritmo que acepte dos números, calcule la suma e imprima el mensaje de acuerdo al resultado obtenido.                 </p>
+<ul>
+<li>Suma &lt;= 50</li>
+<li>Suma &gt; 50 y &lt;= 100</li>
+<li>Suma &gt; 100 y &lt;= 200</li>
+<li>Suma &gt; 200</li>
+</ul>
+<h3 id="ejercicio-118">Ejercicio 1.1.8<a class="headerlink" href="#ejercicio-118" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escriba un algoritmo que permita conocer la edad de una persona, con solo ingresar la fecha de nacimiento y la fecha actual, ambas en el formato: DIA, MES, AÑO</p>
+<h3 id="ejercicio-119">Ejercicio 1.1.9<a class="headerlink" href="#ejercicio-119" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Una persona decide realizar un viaje a Europa, para lo cual necesita una determinada cantidad de euros. La persona tiene ahorrada una cierta suma en dólares y desea saber si es suficiente y, en caso de haber diferencia (de más o de menos) a cuantos pesos equivale. Realice un algoritmo que solucione el problema, para lo cual deberá prever que se ingresen las equivalencias de monedas que considere necesarias (por ejemplo  la cotizacion en pesos de  dólar y/o del euro, o a cuantos euros equivale un dólar).</p>
+<h3 id="ejercicio-1110">Ejercicio 1.1.10<a class="headerlink" href="#ejercicio-1110" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dados dos números enteros A y B generar un algoritmo que permita determinar si A es divisor de B o B es divisor de A.</p>
+<h3 id="ejercicio-1111">Ejercicio 1.1.11<a class="headerlink" href="#ejercicio-1111" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dado un año ingresado por el usuario, emitir el mensaje 'ACTUAL' si corresponde al año en curso, 'PASADO' si es menor y 'FUTURO' si es mayor.</p>
+<h3 id="ejercicio-1112">Ejercicio 1.1.12<a class="headerlink" href="#ejercicio-1112" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escriba un algoritmo que acepte un número entero mayor a 100 y menor a 1000, y muestre como está compuesto
+(unidades, decenas y centenas) y si es múltiplo de 3 (Recordar: todo número cuya suma de sus dígitos sea múltiplo
+de 3, lo es también).</p>
+<h3 id="ejercicio-1113">Ejercicio 1.1.13<a class="headerlink" href="#ejercicio-1113" title="Permanent link">&para;</a></h3>
+<hr />
+<p>criba un algoritmo que acepte un número entero mayor a 100 y menor a 1000 que representa una suma de
+dinero e indique cuantos billetes de cada denominación necesita, suponiendo que solo existen billetes de 100, 10 y 1 peso.</p>
+<h3 id="ejercicio-1114">Ejercicio 1.1.14<a class="headerlink" href="#ejercicio-1114" title="Permanent link">&para;</a></h3>
+<hr />
+<p>En un experimento se obtuvieron un conjunto de pares de valores (S, V) y se requiere que desarrolle un programa que determine e imprima:</p>
+<ol>
+<li>Cuantos pares (S, V) tienen el mismo valor de S que el primer par (S, V) de la lista.</li>
+<li>Primer valor de S mayor que V</li>
+<li>En cuantos pares (S, V) se cumple que S es el doble de V</li>
+<li>Productoria de los valores se S no nulos, donde V es nulo</li>
+</ol>
+<h3 id="ejercicio-1115">Ejercicio 1.1.15<a class="headerlink" href="#ejercicio-1115" title="Permanent link">&para;</a></h3>
+<hr />
+<ol>
+<li>Hacer un algoritmo que calcule la altura aproximada de un edificio en pies, ingresando como dato la cantidad de pisos del mismo y la altura promedio de cada piso, en metros. (1 m = 3.28 pies)</li>
+<li>Modifique el algoritmo del punto 1. para que permita calcular la altura de 50 edificios.</li>
+<li>Modifique el algoritmo del punto 1. para que permita calcular la altura de una cantidad indeterminada de edificios. Prevea una condición de fin.</li>
+</ol>
+<h3 id="ejercicio-1116">Ejercicio 1.1.16<a class="headerlink" href="#ejercicio-1116" title="Permanent link">&para;</a></h3>
+<hr />
+<ol>
+<li>Diseñe un algoritmo que obtenga el porcentaje de alumnos de ISI, IQ e IEM, sobre el total de egresados de la UTN-FRRe de un año.</li>
+<li>Modifique el algoritmo del punto 1. para que permita obtener e informar los mismos porcentajes pero para varias Facultades y al final emitir el total de alumnos por carrera y total general.</li>
+</ol>
+<h3 id="ejercicio-1117">Ejercicio 1.1.17<a class="headerlink" href="#ejercicio-1117" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Elabore un algoritmo que calcule el producto de dos enteros A y B empleando sólo la operación suma.</p>
+<h3 id="ejercicio-1118">Ejercicio 1.1.18<a class="headerlink" href="#ejercicio-1118" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Elabore un algoritmo que calcule el cociente de dos enteros F y G  y el Resto de la operación, empleando sólo las operaciones suma y diferencia.</p>
+<h3 id="ejercicio-1119">Ejercicio 1.1.19<a class="headerlink" href="#ejercicio-1119" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escribir un algoritmo que ingrese una variable V y emita el valor de ésta, su cuadrado y su cubo.</p>
+<h3 id="ejercicio-1120">Ejercicio 1.1.20<a class="headerlink" href="#ejercicio-1120" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Teniendo en cuenta el ejercicio anterior, realizar un incremento de la variable V en forma constante y creciente recalculando los demás valores 10 veces. Por ejemplo</p>
+<pre><code>V=2
+
+   V    V2    V3  
+   2     4     8
+   3     9    27
+....  ....  ....
+  12   144  1728
+
+</code></pre>
+<h3 id="ejercicio-1121">Ejercicio 1.1.21<a class="headerlink" href="#ejercicio-1121" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Repita el ejercicio anterior con un cálculo de n veces, con n &gt; 1. Por final emitir la suma de los cuadrados de V.</p>
+<h3 id="ejercicio-1122">Ejercicio 1.1.22<a class="headerlink" href="#ejercicio-1122" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escriba un algoritmo que determine si un número es primo.</p>
+<h3 id="ejercicio-1123">Ejercicio 1.1.23<a class="headerlink" href="#ejercicio-1123" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escriba un algoritmo para calcular cada renglón de una factura (valor unitario * cantidad vendida) y el total de la misma, suponiendo que el número de renglones es variable. Emitir un mensaje de error si el valor unitario es &lt;= 0. Realizar la prueba de escritorio con los siguientes valores:
+Cantidad de renglones: 4</p>
+<table>
+<thead>
+<tr>
+<th align="center">Valor Unitario</th>
+<th align="center">Cantidad Vendida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">2</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">25</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">15</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">8.5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejercicio-1124">Ejercicio 1.1.24<a class="headerlink" href="#ejercicio-1124" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escribir un algoritmo que, dado un importe dinero, permia calcular e informar cuanto corresponde pagar por un impuesto, en cuantas cuotas y el valor de las mismas. Tener en cuenta los siguientes datos:</p>
+<ul>
+<li>IMPUESTO = 10% del importe dado.</li>
+<li>Los importes mayores que \$500 y menor  o igual que $1000 se pagan en dos cuotas.</li>
+<li>Los mayores de $1000 en tres cuotas.
+El algoritmo debe permitir tratar varios importes finalizando cuando se ingresa 9999 como importe.</li>
+</ul>
+<h3 id="ejercicio-1125">Ejercicio 1.1.25<a class="headerlink" href="#ejercicio-1125" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Elabore un algoritmo para calcular los primeros 50 números de FIBONACCI, sabiendo que dichos números cumplen con lo siguiente:</p>
+<p>$$A_0=0, A_1=1, A_2=A_0+A_1, ...,  A_n=A_{(n-1)}+A_{(n-2)}$$</p>
+<h3 id="ejercicio-1126">Ejercicio 1.1.26<a class="headerlink" href="#ejercicio-1126" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Generar un algoritmo para imprimir las coordenadas $(X,Y)$ de una función cuadrática, de la forma: $Y = aX^2+bX+c$, haciendo variar $X$ en el intervalo $[20, -20]$ con un decremento de 2.</p>
+<h3 id="ejercicio-1127">Ejercicio 1.1.27<a class="headerlink" href="#ejercicio-1127" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Repita el ejercicio anterior de modo que sea posible estudiar varias funciones, indicando que se desea terminar al ingresar 9999 para el término cuadrático.</p>
+<h3 id="ejercicio-1128">Ejercicio 1.1.28<a class="headerlink" href="#ejercicio-1128" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Construya un algoritmo capaz de encontrar todas las cifras de tres dígitos que cumplan con la condición de que la suma de los cubos de sus dígitos sea igual al número que la cifra representa.</p>
+<h3 id="ejercicio-1129">Ejercicio 1.1.29<a class="headerlink" href="#ejercicio-1129" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escriba un algoritmo para imprimir los números primos menores a un valor dado n.</p>
+<h3 id="ejercicio-1130">Ejercicio 1.1.30<a class="headerlink" href="#ejercicio-1130" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escriba un algoritmo para resolver el siguiente problema: Una empresa de transportes desea conocer el sueldo de sus 100 choferes. Estos se calculan teniendo en cuenta la categoría (1 o 2) y la asistencia (perfecta: si o no).
+El sueldo se obtiene sumando el sueldo básico, más el 2% de antigüedad por cada año trabajado y \$200 de premio por asistencia.
+El sueldo básico es de \$700 para choferes de categoría 1  y de \$500.- para los de categoría 2.</p>
+<h3 id="ejercicio-1131">Ejercicio 1.1.31<a class="headerlink" href="#ejercicio-1131" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Una fábrica textil produce telas de dos calidades distintas (primera y segunda) y de dos materiales distintos (seda y algodón). Generar un algoritmo que calcule el peso de varias piezas de tela, el cual está dado por la suma del peso neto, más un porcentaje por el apresto, más el peso del núcleo de cartón.
+Para realizar el cálculo, tener en cuenta la siguiente información, para cada pieza:</p>
+<ul>
+<li>El peso del m2 y la longitud de cada pieza.</li>
+<li>Al peso neto de la tela hay que sumarle un porcentaje por cada pieza, debido al apresto, el cual es del 2% para las telas de seda y del 7% para las de algodón.</li>
+<li>También se debe considerar el núcleo de cartón, que es de 400 gr. para los rollos de telas de primera y de 300 gr. en los de segunda.</li>
+</ul>
+<p>Finalizar cuando la variable FIN sea igual a 'SI'.</p>
+<h3 id="ejercicio-1132">Ejercicio 1.1.32<a class="headerlink" href="#ejercicio-1132" title="Permanent link">&para;</a></h3>
+<hr />
+<p>La fecha del domingo de Pascua corresponde al primer domingo después de la primera luna llena que sigue al equinoccio de primavera. La secuencia de cálculos que permite conocer esta fecha es:</p>
+<pre><code>A = anio mod 19
+B = anio mod 4
+C = anio mod 7
+D = ( 19 * A + 24 ) mod 30 
+E = ( 2 * B + 4 * C + 6 * D + 5 ) mod 7
+N = ( 22 + D + E )
+</code></pre>
+<p>Donde N indica el número del día del mes de marzo (o abril si N es superior a 31) correpondiente al domingo de Pascua. Realizar un algoritmo que determine esta fecha para los años comprendidos entre 1990 y 2010</p>
+<h3 id="ejercicio-1133">Ejercicio 1.1.33<a class="headerlink" href="#ejercicio-1133" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escribir un algoritmo que permita imprimir la siguiente sucesión. Considere que N es un número par, que se ingresa.</p>
+<pre><code>    2   4   6    8  ...  N
+    4   6   8   10  ...  N
+    6   8  10   12  ...  N
+    ....
+    ....
+    N
+</code></pre>
+<h3 id="ejercicio-1134">Ejercicio 1.1.34<a class="headerlink" href="#ejercicio-1134" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escribir un algoritmo que permita imprimir la siguiente sucesión. Considere que N es un número par, que se ingresa.</p>
+<pre><code>    2   4   6   ............    N
+    2   4   6   ........    N-2
+    2   4   6   ...     N-4
+    ...........
+    2   4   6   
+    2   4   
+    2   
+</code></pre>
+<h3 id="ejercicio-1135">Ejercicio 1.1.35<a class="headerlink" href="#ejercicio-1135" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escriba un algoritmo que acepte un número entero que representa una suma de dinero e indique cuantos billetes
+de cada denominación necesita, suponiendo que solo existen billetes de 500, 100, 50, 20, 10, 5 y 1 peso.</p>
+<h3 id="ejercicio-1136">Ejercicio 1.1.36<a class="headerlink" href="#ejercicio-1136" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Todo número cuya suma de sus dígitos sea múltiplo de 3 lo es también.
+ Ej: 117 → 1+1+7 = 9 que es múltiplo de 3 , entonces 117 es múltiplo de 3
+Realizar un algoritmo que determine si un número es múltiplo de 3 en función de la afirmación antes realizada</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../0/" title="0. Algortimos" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                0. Algortimos
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../1.2/" title="1.2. Subacciones" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                1.2. Subacciones
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+
+        Algoritmos y Estructuras de Datos - 
+        
+        <a href="http://www.frre.utn.edu.ar">UTN FRRe</a>
+
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://github.com/aed-frre/site" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "", "search.config.separator": "", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs", "instant"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../extra/js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
