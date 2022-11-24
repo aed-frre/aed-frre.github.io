@@ -1,0 +1,1215 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>4. Tratamiento de Listas - Guía de Trabajos Prácticos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../extra/css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-140521258-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");ga("send","event","feedback","click",t,e),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-tratamiento-de-listas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Guía de Trabajos Prácticos" class="md-header__button md-logo" aria-label="Guía de Trabajos Prácticos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guía de Trabajos Prácticos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. Tratamiento de Listas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guía de Trabajos Prácticos" class="md-nav__button md-logo" aria-label="Guía de Trabajos Prácticos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Guía de Trabajos Prácticos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Bienvenidos!
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Práctica
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Práctica" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Práctica
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practica/0/" class="md-nav__link">
+        0. Algortimos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          1. Elementales
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1. Elementales" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          1. Elementales
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practica/1.1/" class="md-nav__link">
+        1.1. Datos y Estructuras
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practica/1.2/" class="md-nav__link">
+        1.2. Subacciones
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          2. Secuencias y Archivos Indexados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2. Secuencias y Archivos Indexados" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          2. Secuencias y Archivos Indexados
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practica/2.1/" class="md-nav__link">
+        2.1. Secuencias de datos elementales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practica/2.21/" class="md-nav__link">
+        2.2. Secuencias de datos elementales extra
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practica/2.2/" class="md-nav__link">
+        2.3. Archivos Secuenciales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practica/2.3/" class="md-nav__link">
+        2.4. Archivos Indexados
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practica/3/" class="md-nav__link">
+        3. Arreglos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practica/4/" class="md-nav__link">
+        4. Listas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practica/5/" class="md-nav__link">
+        5. Recursividad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practica/x/" class="md-nav__link">
+        X. Parcial
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Complementos Teóricos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Complementos Teóricos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Complementos Teóricos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/mezcla/" class="md-nav__link">
+        Mezcla
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/corte/" class="md-nav__link">
+        Corte de Control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/actualizacion/" class="md-nav__link">
+        Actualización
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/arreglos/" class="md-nav__link">
+        Arreglos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/listas/" class="md-nav__link">
+        Listas
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Complementarios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Complementarios" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Complementarios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1/" class="md-nav__link">
+        1. Datos y Estructuras Elementales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          2. Tratamiento de Secuencias
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2. Tratamiento de Secuencias" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          2. Tratamiento de Secuencias
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1/" class="md-nav__link">
+        2.1. Secuencias de datos elementales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2/" class="md-nav__link">
+        2.2. Archivos Secuenciales
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3/" class="md-nav__link">
+        3. Tratamiento de Arreglos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          4. Tratamiento de Listas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        4. Tratamiento de Listas
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-41" class="md-nav__link">
+    Ejercicio 4.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-42" class="md-nav__link">
+    Ejercicio 4.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-43" class="md-nav__link">
+    Ejercicio 4.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-44" class="md-nav__link">
+    Ejercicio 4.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-45" class="md-nav__link">
+    Ejercicio 4.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-46" class="md-nav__link">
+    Ejercicio 4.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-47" class="md-nav__link">
+    Ejercicio 4.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-48" class="md-nav__link">
+    Ejercicio 4.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-49" class="md-nav__link">
+    Ejercicio 4.9
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-41" class="md-nav__link">
+    Ejercicio 4.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-42" class="md-nav__link">
+    Ejercicio 4.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-43" class="md-nav__link">
+    Ejercicio 4.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-44" class="md-nav__link">
+    Ejercicio 4.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-45" class="md-nav__link">
+    Ejercicio 4.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-46" class="md-nav__link">
+    Ejercicio 4.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-47" class="md-nav__link">
+    Ejercicio 4.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-48" class="md-nav__link">
+    Ejercicio 4.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-49" class="md-nav__link">
+    Ejercicio 4.9
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="4-tratamiento-de-listas">4. Tratamiento de Listas<a class="headerlink" href="#4-tratamiento-de-listas" title="Permanent link">&para;</a></h1>
+<h3 id="ejercicio-41">Ejercicio 4.1<a class="headerlink" href="#ejercicio-41" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dada la siguiente declaración y el siguiente esquema:</p>
+<pre><code>  P, Q, R:  puntero a NODO
+    NODO: registro
+    DATO: entero
+    PROX: puntero a nodo
+  Fin registro
+
+
+   P↓              Q↓               R↓
+   _______        _______         _______
+  | 3 |   |----→ | 5 |   | ----→ | 9 |nil|
+   -------       ---------       --------
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>P</th>
+<th>Q</th>
+<th>R</th>
+<th>Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>¿Qué hacen las siguientes órdenes? </p>
+<p>Considerar que se ejecutan secuencialmente. </p>
+<ol>
+<li>$ P:= P↑. PROX $</li>
+<li>$ Q:= P $</li>
+<li>$ R:= P↑.PROX $</li>
+<li>$ P↑.DATO:= Q↑. DATO $</li>
+<li>$ P↑.DATO:= (Q↑.PROX)↑. DATO $</li>
+<li>$ R↑.PROX:=  P $</li>
+</ol>
+<h3 id="ejercicio-42">Ejercicio 4.2<a class="headerlink" href="#ejercicio-42" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dada una lista simplemente encadenada de números enteros, diseñar un algoritmo que a partir de ella genere otra lista conteniendo los nodos cuyos datos sean múltiplos de 3, dichos elementos deberán ser eliminados de la lista original. Se asume que la lista está cargada y que el algoritmo recibe como parámetro de entrada la dirección del primer elemento.</p>
+<h3 id="ejercicio-43">Ejercicio 4.3<a class="headerlink" href="#ejercicio-43" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dada una lista doblemente encadenada que contiene datos de todas las provincias de la República Argentina: nombre, capital, cantidad total de habitantes y cantidad de analfabetos, y está ordenada alfabéticamente por nombre de provincia, se desea generar otra lista simplemente encadenada pero ordenada en orden decreciente por número de habitantes analfabetos.</p>
+<h3 id="ejercicio-44">Ejercicio 4.4<a class="headerlink" href="#ejercicio-44" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dada una lista circular con los datos de los socios de un club: número, nombre y condición ( ´A´= alta, ´B´= baja); hacer un algoritmo que cree otra lista simplemente encadenada con los socios múltiplos de 100, que no estén dados de baja y eliminar de la lista original los socios dados de baja ( cond = ´B´).</p>
+<h3 id="ejercicio-45">Ejercicio 4.5<a class="headerlink" href="#ejercicio-45" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Una empresa FARMACÉUTICA, posee una lista simplemente enlazada de pedidos realizados por sus clientes en el último mes. Se desea generar dos grupos con la siguiente información:</p>
+<ul>
+<li>Los pedidos de los clientes deudores.</li>
+<li>Los pedidos de los clientes regulares.</li>
+</ul>
+<p>Para ello se cuenta con un archivo “CLIENTES” indexado por Nro_cliente.</p>
+<p>Deben tenerse en cuenta las siguientes consideraciones:</p>
+<ul>
+<li>La lista de entrada está ordenada por Nro_cliente y pueden existir varios pedidos de un mismo cliente.</li>
+<li>En el caso de recibir un pedido de un cliente que se encuentre dado de baja, debe ser dado de alta automáticamente.</li>
+<li>El total (Monto $) de Dinero_deuda debe ser actualizado con la suma de los pedidos en Cuenta Corriente. Modificar la condición a Deudor si esa suma es mayor a cero.</li>
+</ul>
+<p>Formato lista de entrada</p>
+<ul class='fileul'>
+  <li>Nro_cliente
+  <li>Nro pedido
+  <li>Precio pedido
+  <li>TipoPedido (C:Contado, R: Cuenta Corriente)
+</ul>
+
+<p>Formato archivo “Clientes”</p>
+<ul class='fileul'>
+  <li>Nro_cliente
+  <li>DNI
+  <li>Domicilio
+  <li>Dinero_deuda
+  <li>Deudor (si/no)
+  <li>Baja
+</ul>
+
+<p>Formato lista salida</p>
+<ul class='fileul'>
+  <li>Nro_cliente
+  <li>Total pedido
+</ul>
+
+<h3 id="ejercicio-46">Ejercicio 4.6<a class="headerlink" href="#ejercicio-46" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Usando las operaciones de Lista, escribir un procedimiento AGRUPA (PRIM, ULT: puntero a nodo; A:entero) que, dada una lista doblemente encadenada de enteros L agrupe (sume) elementos  de tal manera que en L queden sólo elementos mayores o iguales que A. El algoritmo recorre la lista y cuando encuentra un elemento menor empieza a agrupar (sumar) el elemento con los siguientes hasta llegar al valor A o hasta que se acabe la lista (el elemento menor se debe eliminar de la lista.)  </p>
+<p>Por ejemplo si: </p>
+<p>L = {3,4,2,4,1,4,4,3,2,2,4,1,4,1,4,4,1,4,4,2}, </p>
+<p>entonces AGRUPA(PRIM, ULT,10) da </p>
+<p>L = {13,12,13,10,10}. </p>
+<p>En la lista final NO deben quedar elementos menores que A, salvo, eventualmente, el último.</p>
+<h3 id="ejercicio-47">Ejercicio 4.7<a class="headerlink" href="#ejercicio-47" title="Permanent link">&para;</a></h3>
+<hr />
+<p>La empresa "Remises Yapú S.A." necesita solucionar el problema de asignación de vehículos para sus clientes. La empresa posee 105 autos, y maneja dos colas (estructuras FIFO) una llamada "No Asignados" y otra llamada "Asignados".
+En la primera se encuentran todos los autos que no han sido asignados a algún cliente en lo que va del día y en la segunda los autos que ya han sido asignados. La idea de la cola “Asignados” es manejar en forma equitativa la asignación de turnos, es decir que cada vehículo tenga igual oportunidad de obtener un cliente. 
+Los vehículos se asignan de la siguiente forma:</p>
+<ul>
+<li>Si existen autos “No Asignados”, se toma uno de ellos y se lo mueve a la cola de “Asignados”.</li>
+<li>Si no existen autos “No Asignados”, se toma uno de la cola de “Asignados” , y se lo coloca al final de la cola.</li>
+</ul>
+<p>Siempre que se asigna un vehículo se debe incrementar en uno un campo “cantidad_de_clientes", a fin de saber cuantos clientes tuvo.
+Por final de proceso se requiere saber la cantidad total de clientes de ese día.
+Se pide: Confeccionar una subacción que  realice la asignación de vehículos y el mantenimiento de las colas, usando listas.</p>
+<h3 id="ejercicio-48">Ejercicio 4.8<a class="headerlink" href="#ejercicio-48" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se dispone de una lista doblemente enlazada con un conjunto de números naturales. Este conjunto está dividido en 10 grupos. En cada grupo el primer elemento indica la cantidad de números subsiguientes a él que integran dicho grupo.
+Se desea generar una nueva lista circular, simplemente encadenada, en la cual cada nodo contendrá el valor máximo de cada grupo. Dicha lista debe quedar ordenada en forma ascendente y, al final se debe informar cuál es el promedio de todos los máximos. </p>
+<h3 id="ejercicio-49">Ejercicio 4.9<a class="headerlink" href="#ejercicio-49" title="Permanent link">&para;</a></h3>
+<hr />
+<p>El ciclo de desarrollo de software tradicional, incremental e iterativo cuenta con las siguientes etapas: Captura de Requisitos, Análisis, Diseño, Desarrollo, Implementación y Prueba.
+De la última etapa se obtiene un informe que contiene las modificaciones que deben realizarse al software para que cumpla con las funcionalidades para las cuales fue creado inicialmente.</p>
+<p>Suponga que cuenta con una lista de proyectos de software de los cuales se tiene la siguiente información:</p>
+<ul class='fileul'>
+  <li>Proy AN(20)
+  <li>Resp AN(30)
+  <li>Fch_Ini Fecha
+  <li>C_Error N(3)
+</ul>
+
+<p>El dato Cant_Errores indica la cantidad de errores que deben solucionarse en cada proyecto. </p>
+<p>La información respecto a cada Error se almacena en una lista de acuerdo al orden de los proyectos y teniendo en cuenta la cantidad que le corresponden a éste. Por ejemplo si en la Lista 1 el Proyecto A tiene 3 errores, los 3 primeros nodos de la Lista 2 corresponden al Proyecto A. La información que se almacena por Error es la siguiente:</p>
+<ul class='fileul'>
+  <li>Desc_E AN(30)
+  <li>Est AN(1)
+</ul>
+
+<p>Est – M: En Modificación | O: En Observación | R: Resuelto</p>
+<p>Durante el proceso de Control de Proyectos se analiza cada error de cada proyecto, y se le consulta al Responsable el estado del Error (en caso que no haya sido Resuelto) para actualizarlo. 
+El Responsable debe tener la opción de recorrer todos los proyectos, en el orden almacenados, las veces que considere necesario, luego de analizar el último en la lista.</p>
+<p>Suponiendo que se necesita simular el control de los proyectos, creando dos listas para almacenar por un lado Proyectos y por otro Errores. Y que además se debe informar al final del proceso qué cantidad de proyectos pasaron el control con todos sus errores resueltos. Se le solicita a ud:</p>
+<ol>
+<li>
+<p>Dado el Algoritmo resuelto pero incompleto, analice la propuesta presentada e indique las sentencias incorrectas, encerrándolas con un círculo, e indique las modificaciones necesarias para que  funcione, complete la líneas de puntos y agregue las acciones que falten. </p>
+</li>
+<li>
+<p>Desarrolle la acción Control_Proyectos  y complete el ambiente si fuera necesario </p>
+</li>
+</ol>
+<pre><code>  Accion Ej_1  (PRIM: Puntero a Nodo, PRIM2: Puntero a Nodo2) Es
+     Ambiente
+      NODO = Registro
+       Proy: N(30)
+       Resp: AN(30)
+       Fecha: Fecha
+       C_error: N(3)
+       Prox: Puntero a Nodo
+      FinRegistro
+      NODO1 = Registro
+       Desc_E: AN(30)
+       Est: AN(1)
+       Prox: Puntero
+      FinRegistro
+      P, K: Puntero a Nodo
+      Q : Puntero a Nodo1
+      Cont, cant_proy: N(3)
+      Opc: caracter
+
+      Subaccion Cargar_Proyectos es
+        Escribir(“Ingrese ‘S’ para empezar o cualquier otro caracter para salir“)  
+        Leer(opc)
+        Mientras opc = ‘S’ hacer          …………………
+          Leer(*P.Proy, *P.Resp, *P.Fch_Ini, *P.C)
+
+          Si ……………… Entonces
+                     P := *P.prox;
+                      PRIM:=P;
+          Sino                          
+                     K := PRIM
+                     Mientras (*K.prox &lt;&gt; PRIM) hacer
+                        K := *K.prox
+                     FinMientras
+                     *K.prox := P
+                     *P.prox := PRIM
+          Fsi;
+        Cont:= 0
+         Cargar_Errores 
+         Escribir(“Ingrese ‘S’ para seguir cargando proyectos o cualquier
+          otro caracter para salir”)
+          Leer(opc)
+        Fin Mientras
+      Fin Subaccion
+
+    Subacción Cargar_Errores es
+      Mientras Cont &lt;= *P.C_error hacer
+           NUEVO(Q)
+           Escribir(*Q.Desc_E, *P.Est)
+           Si PRIM2 = NIL Entonces
+                     *Q.prox := Nil
+
+                     ……… := Q
+            Sino
+                     *Q.prox := PRIM2
+                     PRIM2 := Q
+             FinSi
+
+             …………………………………
+      Fin Mientras
+    FinSubaccion
+
+
+  Algoritmo
+     Cargar_Proyectos;
+     Control_Proyectos;
+     Escribir(‘La cantidad de proyectos con errores resueltos es de’, *P.C_error)
+  Fin Accion
+</code></pre>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../3/" title="3. Tratamiento de Arreglos" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                3. Tratamiento de Arreglos
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+
+        Algoritmos y Estructuras de Datos - 
+        
+        <a href="http://www.frre.utn.edu.ar">UTN FRRe</a>
+
+      </div>
+      <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/aed-frre/site" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs", "instant"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+        <script src="../../extra/js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

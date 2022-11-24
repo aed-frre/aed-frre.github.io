@@ -1,0 +1,1751 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>3. Arreglos - Guía de Trabajos Prácticos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../extra/css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-140521258-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");ga("send","event","feedback","click",t,e),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-arreglos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Guía de Trabajos Prácticos" class="md-header__button md-logo" aria-label="Guía de Trabajos Prácticos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guía de Trabajos Prácticos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. Arreglos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guía de Trabajos Prácticos" class="md-nav__button md-logo" aria-label="Guía de Trabajos Prácticos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Guía de Trabajos Prácticos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Bienvenidos!
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Práctica
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Práctica" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Práctica
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0/" class="md-nav__link">
+        0. Algortimos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          1. Elementales
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1. Elementales" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          1. Elementales
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1/" class="md-nav__link">
+        1.1. Datos y Estructuras
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2/" class="md-nav__link">
+        1.2. Subacciones
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          2. Secuencias y Archivos Indexados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2. Secuencias y Archivos Indexados" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          2. Secuencias y Archivos Indexados
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1/" class="md-nav__link">
+        2.1. Secuencias de datos elementales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.21/" class="md-nav__link">
+        2.2. Secuencias de datos elementales extra
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2/" class="md-nav__link">
+        2.3. Archivos Secuenciales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3/" class="md-nav__link">
+        2.4. Archivos Indexados
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3. Arreglos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        3. Arreglos
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-31" class="md-nav__link">
+    Ejercicio 3.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-32" class="md-nav__link">
+    Ejercicio 3.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-33" class="md-nav__link">
+    Ejercicio 3.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-34" class="md-nav__link">
+    Ejercicio 3.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-35" class="md-nav__link">
+    Ejercicio 3.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-36" class="md-nav__link">
+    Ejercicio 3.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-37" class="md-nav__link">
+    Ejercicio 3.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-38" class="md-nav__link">
+    Ejercicio 3.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-39" class="md-nav__link">
+    Ejercicio 3.9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-310" class="md-nav__link">
+    Ejercicio 3.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-311" class="md-nav__link">
+    Ejercicio 3.11
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-312" class="md-nav__link">
+    Ejercicio 3.12
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-313" class="md-nav__link">
+    Ejercicio 3.13
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-314" class="md-nav__link">
+    Ejercicio 3.14
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-315" class="md-nav__link">
+    Ejercicio 3.15
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-316" class="md-nav__link">
+    Ejercicio 3.16
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-317" class="md-nav__link">
+    Ejercicio 3.17
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-318" class="md-nav__link">
+    Ejercicio 3.18
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-319" class="md-nav__link">
+    Ejercicio 3.19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-320" class="md-nav__link">
+    Ejercicio 3.20
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-321" class="md-nav__link">
+    Ejercicio 3.21
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-322" class="md-nav__link">
+    Ejercicio 3.22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-323" class="md-nav__link">
+    Ejercicio 3.23
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-324" class="md-nav__link">
+    Ejercicio 3.24
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-325" class="md-nav__link">
+    Ejercicio 3.25
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-326" class="md-nav__link">
+    Ejercicio 3.26
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-327" class="md-nav__link">
+    Ejercicio 3.27
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-328" class="md-nav__link">
+    Ejercicio 3.28
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-329" class="md-nav__link">
+    Ejercicio 3.29
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-330" class="md-nav__link">
+    Ejercicio 3.30
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-331" class="md-nav__link">
+    Ejercicio 3.31
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-332" class="md-nav__link">
+    Ejercicio 3.32
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4/" class="md-nav__link">
+        4. Listas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5/" class="md-nav__link">
+        5. Recursividad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../x/" class="md-nav__link">
+        X. Parcial
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Complementos Teóricos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Complementos Teóricos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Complementos Teóricos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/mezcla/" class="md-nav__link">
+        Mezcla
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/corte/" class="md-nav__link">
+        Corte de Control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/actualizacion/" class="md-nav__link">
+        Actualización
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/arreglos/" class="md-nav__link">
+        Arreglos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/listas/" class="md-nav__link">
+        Listas
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Complementarios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Complementarios" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Complementarios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../complementarios/1/" class="md-nav__link">
+        1. Datos y Estructuras Elementales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          2. Tratamiento de Secuencias
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2. Tratamiento de Secuencias" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          2. Tratamiento de Secuencias
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../complementarios/2.1/" class="md-nav__link">
+        2.1. Secuencias de datos elementales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../complementarios/2.2/" class="md-nav__link">
+        2.2. Archivos Secuenciales
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../complementarios/3/" class="md-nav__link">
+        3. Tratamiento de Arreglos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../complementarios/4/" class="md-nav__link">
+        4. Tratamiento de Listas
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-31" class="md-nav__link">
+    Ejercicio 3.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-32" class="md-nav__link">
+    Ejercicio 3.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-33" class="md-nav__link">
+    Ejercicio 3.3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-34" class="md-nav__link">
+    Ejercicio 3.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-35" class="md-nav__link">
+    Ejercicio 3.5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-36" class="md-nav__link">
+    Ejercicio 3.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-37" class="md-nav__link">
+    Ejercicio 3.7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-38" class="md-nav__link">
+    Ejercicio 3.8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-39" class="md-nav__link">
+    Ejercicio 3.9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-310" class="md-nav__link">
+    Ejercicio 3.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-311" class="md-nav__link">
+    Ejercicio 3.11
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-312" class="md-nav__link">
+    Ejercicio 3.12
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-313" class="md-nav__link">
+    Ejercicio 3.13
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-314" class="md-nav__link">
+    Ejercicio 3.14
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-315" class="md-nav__link">
+    Ejercicio 3.15
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-316" class="md-nav__link">
+    Ejercicio 3.16
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-317" class="md-nav__link">
+    Ejercicio 3.17
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-318" class="md-nav__link">
+    Ejercicio 3.18
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-319" class="md-nav__link">
+    Ejercicio 3.19
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-320" class="md-nav__link">
+    Ejercicio 3.20
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-321" class="md-nav__link">
+    Ejercicio 3.21
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-322" class="md-nav__link">
+    Ejercicio 3.22
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-323" class="md-nav__link">
+    Ejercicio 3.23
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-324" class="md-nav__link">
+    Ejercicio 3.24
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-325" class="md-nav__link">
+    Ejercicio 3.25
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-326" class="md-nav__link">
+    Ejercicio 3.26
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-327" class="md-nav__link">
+    Ejercicio 3.27
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-328" class="md-nav__link">
+    Ejercicio 3.28
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-329" class="md-nav__link">
+    Ejercicio 3.29
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-330" class="md-nav__link">
+    Ejercicio 3.30
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-331" class="md-nav__link">
+    Ejercicio 3.31
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-332" class="md-nav__link">
+    Ejercicio 3.32
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="3-arreglos">3. Arreglos<a class="headerlink" href="#3-arreglos" title="Permanent link">&para;</a></h1>
+<h3 id="ejercicio-31">Ejercicio 3.1<a class="headerlink" href="#ejercicio-31" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Para cada una de las consignas siguientes, genere un algoritmo que permita solucionarla (3 algoritmos)  usando un arreglo de 100 números enteros:  </p>
+<ol>
+<li>Almacenar 100 números.  </li>
+<li>Localizar el número de mayor valor y el de menor valor, informar sus valores y sus posiciones.  </li>
+<li>Contar y sumar todos los números pares.  </li>
+</ol>
+<h3 id="ejercicio-32">Ejercicio 3.2<a class="headerlink" href="#ejercicio-32" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Genere un único algoritmo que resuelva las 3 consignas del ejercicio anterior.</p>
+<h3 id="ejercicio-33">Ejercicio 3.3<a class="headerlink" href="#ejercicio-33" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dados un vector de reales <em>a</em> de <em>n</em> elementos, con <em>n</em> ∈ N<sub>0</sub>, y un número real <em>x</em> &gt;= 0, calcular el valor y tal que: </p>
+<p>$$y = \sum_{i=1}^n (a_i \times x^i)$$</p>
+<h3 id="ejercicio-34">Ejercicio 3.4<a class="headerlink" href="#ejercicio-34" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Considerando un arreglo de 50 números enteros, confeccione un algoritmo para resolver las siguientes consignas: </p>
+<ol>
+<li>Modificar el arreglo dado, de modo que todos sus elementos sean múltiplos de 3.   </li>
+<li>Crear otro arreglo que contenga los números que no cumplieron la condición.  </li>
+<li>Informar cuántos números cumplieron la condición.  </li>
+</ol>
+<h3 id="ejercicio-35">Ejercicio 3.5<a class="headerlink" href="#ejercicio-35" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dados 2 vectores:  </p>
+<p><code>A: arreglo [1 .. 30] de reales</code>
+<code>B: arreglo [1 .. 30] de reales</code>  </p>
+<p>Ambos ordenados de forma creciente, escribir un algoritmo que realice la mezcla de ambos para obtener otro vector tambien ordenado de forma creciente  </p>
+<p><code>C: arreglo [1 .. 60] de reales</code></p>
+<h3 id="ejercicio-36">Ejercicio 3.6<a class="headerlink" href="#ejercicio-36" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escribir un algoritmo que permita cargar un arreglo de <em>N</em> nombres, considerando que cada nombre debe tener entre 1 y 10 caracteres.</p>
+<h3 id="ejercicio-37">Ejercicio 3.7<a class="headerlink" href="#ejercicio-37" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escribir un algoritmo que permita localizar un nombre en un arreglo de <em>N</em> nombres, ordenados alfabéticamente. Cada nombre puede tener, como máximo, 10 caracteres. Escriba por lo menos dos algoritmos que permitan solucionar el problema; especifique cuál de las formas considera más eficiente y por qué.</p>
+<h3 id="ejercicio-38">Ejercicio 3.8<a class="headerlink" href="#ejercicio-38" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Repita el ejercicio anterior, pero suponiendo que se precisa localizar todos los nombres que comienzan con una letra dada.</p>
+<h3 id="ejercicio-39">Ejercicio 3.9<a class="headerlink" href="#ejercicio-39" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se posee un arreglo de 200 libros con el siguiente formato:  </p>
+<table>
+<thead>
+<tr>
+<th>NRO_LIBRO</th>
+<th>TITULO</th>
+<th>AUTOR</th>
+<th>CANT_HOJAS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>ordenado por AUTOR y se presentan las siguientes premisas:</p>
+<ol>
+<li>Se necesita saber que libros se poseen de “Nicklaus Wirth”.  </li>
+<li>Se necesita saber en qué posición se encuentra “Algoritmos + Estructuras de Datos=Programa”.  </li>
+<li>Se necesita saber cual es el libro de “Nicklaus Wirth” de mayor volumen.  </li>
+</ol>
+<h3 id="ejercicio-310">Ejercicio 3.10<a class="headerlink" href="#ejercicio-310" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dado un arreglo de 50 elementos, cada uno de los cuales tiene los siguientes datos: Código de localidad y Lluvia caída en un año. Escribir un algoritmo que permita saber dada una localidad, cuanto llovió en el año. Aplicar el método más adecuado considerando que el arreglo esta ordenado por Código de localidad.</p>
+<h3 id="ejercicio-311">Ejercicio 3.11<a class="headerlink" href="#ejercicio-311" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dado un arreglo de 100 elementos, que contiene la siguiente información sobre videos: Título de la película, Nombre del Director, Categoría de película, Cantidad de personas que la vieron, Alquilado (si/no); y está ordenado por el Título de la película, diseñe un algoritmo que, ingresando una categoría, liste todas las películas que pertenecen a dicha categoría.</p>
+<h3 id="ejercicio-312">Ejercicio 3.12<a class="headerlink" href="#ejercicio-312" title="Permanent link">&para;</a></h3>
+<hr />
+<p>A partir del arreglo de videos descrito en el ejercicio anterior, diseñe un algoritmo que permita atender un pedido de alquiler, para lo cual debe verificar si es posible o no y, cuando corresponda, actualizar la cantidad de personas que vieron dicha película.</p>
+<h3 id="ejercicio-313">Ejercicio 3.13<a class="headerlink" href="#ejercicio-313" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se precisa ordenar un arreglo de <em>N</em> alumnos de mayor a menor, de acuerdo a la cantidad de materias aprobadas. Cada elemento del arreglo contiene Nro. de Legajo y Cantidad de materias aprobadas. Escriba por lo menos dos algoritmos que permitan solucionar el problema; especifique cuál de las formas considera más eficiente y por qué.</p>
+<h3 id="ejercicio-314">Ejercicio 3.14<a class="headerlink" href="#ejercicio-314" title="Permanent link">&para;</a></h3>
+<hr />
+<p>El mes que viene se realizará en Buenos Aires el desfile “Alta Moda 2018”, el cual reúne a los diseñadores más reconocidos del país. Para organizar las pasadas, se dispone de un arreglo por diseñador, con la siguiente información: nombre de el/la modelo y altura. La directora del evento necesita que se imprima cada lista ordenada de acuerdo a la altura de el/la modelo. Escribir un algoritmo que permita ingresar los datos de cada diseñador e imprimirlos de acuerdo a lo solicitado.</p>
+<h3 id="ejercicio-315">Ejercicio 3.15<a class="headerlink" href="#ejercicio-315" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se precisa ordenar un arreglo de enteros de menor a mayor, eliminando los números repetidos</p>
+<h3 id="ejercicio-316">Ejercicio 3.16<a class="headerlink" href="#ejercicio-316" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Una empresa que comercializa una cierta cantidad de artículos diferentes desea confeccionar un ranking de ventas de los mismos, a partir de una secuencia ordenada por articulo que contiene: </p>
+<table>
+<thead>
+<tr>
+<th>NRO_ARTICULO</th>
+<th>TIPO</th>
+<th>CANT_VENDIDA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Escribir un algoritmo que emita el ranking deseado en orden decreciente por cantidad.</p>
+<h3 id="ejercicio-317">Ejercicio 3.17<a class="headerlink" href="#ejercicio-317" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se precisa generar una secuencia con los datos de los 10 videos más vistos de una categoría, a partir de una secuencia de entrada de 200 registros que contiene el Título de la película, Nombre del Director, Categoría de película, Cantidad de personas que la vieron y que está ordenada por el Título de la película.</p>
+<h3 id="ejercicio-318">Ejercicio 3.18<a class="headerlink" href="#ejercicio-318" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se precisa diseñar una agenda electrónica, donde se archivará el nombre, la dirección y el teléfono de hasta 50 personas. Diseñe un algoritmo que permita efectuar consultas, modificaciones, eliminaciones de los datos de una persona  y agregados de nuevas personas (sólo será posible incorporar una persona si hay menos de 50 archivadas en la agenda). Los datos se hallan almacenados en una secuencia. Considere que la agenda siempre debe mantenerse ordenada alfabéticamente.</p>
+<h3 id="ejercicio-319">Ejercicio 3.19<a class="headerlink" href="#ejercicio-319" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Escribir un algoritmo que emita cuál es y dónde está ubicado el mayor elemento de cada fila de una matriz, e imprima un mensaje si todos los mayores se encuentran en la misma columna.</p>
+<h3 id="ejercicio-320">Ejercicio 3.20<a class="headerlink" href="#ejercicio-320" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dadas dos matrices A y B, cuadradas, de 5 x 5, con números enteros, cargar una matriz C, de 5 x 5 teniendo en cuenta las siguientes condiciones: la diagonal principal completar con ceros, en las posiciones que están por encima de la diagonal principal, copiar los correspondientes elementos de la matriz A y en las posiciones que están por debajo de la diagonal principal, copiar los elementos correspondientes de la matriz B.</p>
+<h3 id="ejercicio-321">Ejercicio 3.21<a class="headerlink" href="#ejercicio-321" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dada una matriz de 6 x 6 de enteros, cuya última fila y columna contienen ceros, calcular la suma de cada fila y guardar en la última celda de la misma; y la suma de cada columna y guardar en la última celda de la misma. Calcular también el total general y guardar en la posición (6,6).</p>
+<h3 id="ejercicio-322">Ejercicio 3.22<a class="headerlink" href="#ejercicio-322" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dada una matriz cuadrada de 5 x 5 de números, sumar filas y columnas y guardar en una matriz de 2 x 5, de modo que la fila 1 contenga la suma de cada fila y la fila 2, la suma de cada columna)</p>
+<h3 id="ejercicio-323">Ejercicio 3.23<a class="headerlink" href="#ejercicio-323" title="Permanent link">&para;</a></h3>
+<hr />
+<p>En un sector de un hospital, donde se encuentran internados 50 pacientes, se toma la temperatura de cada paciente 4 veces al día durante una semana.</p>
+<table>
+<thead>
+<tr>
+<th>Lectura</th>
+<th>Dom</th>
+<th>Lun</th>
+<th>Mar</th>
+<th>Mie</th>
+<th>Jue</th>
+<th>Vie</th>
+<th>Sab</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+</tr>
+<tr>
+<td>2</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+</tr>
+<tr>
+<td>3</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+</tr>
+<tr>
+<td>4</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+<td>XX</td>
+</tr>
+</tbody>
+</table>
+<p>Se dispone de un arreglo con la información recopilada de todos los pacientes.</p>
+<p>Construir un algoritmo que:</p>
+<ol>
+<li>Liste por pantalla las temperaturas máxima y mínima de cada paciente, indicando el día y lectura en la que ocurrieron.  </li>
+<li>Genere un nuevo arreglo que contenga la temperatura promedio por día de cada paciente.</li>
+</ol>
+<h3 id="ejercicio-324">Ejercicio 3.24<a class="headerlink" href="#ejercicio-324" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se cuenta con información acerca de los cajeros de un Supermercado, el cual se halla estructurado en 10 cajas registradoras. Dicha información está registrada en una secuencia que contiene Apellido y Nombre del empleado, número de caja que tiene asignada, importe facturado y horario de facturación; la secuencia está ordenada alfabéticamente por Apellido y Nombre. Se solicita una estadística de los importes facturados, discriminado por número de caja y franja de horas y además los montos totales, según el siguiente formato:</p>
+<table>
+<thead>
+<tr>
+<th>Cajas</th>
+<th>8-10</th>
+<th>10-12</th>
+<th>12-16</th>
+<th>16-18</th>
+<th>18-20</th>
+<th>Total x Cajas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>..</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>10</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>Total x horas</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejercicio-325">Ejercicio 3.25<a class="headerlink" href="#ejercicio-325" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Una Fábrica que posee 4 plantas de producción en nuestro país y compra materia prima a 3 proveedores distintos, desea realizar un control de los montos totales correspondientes a compras realizadas en cada planta durante el último año, discriminados por proveedor y por mes. 
+Para ello dispone de un archivo con los datos de las facturas correspondientes. (Aclaración: el archivo no está ordenado por ningún criterio)</p>
+<p><strong>COMPRAS</strong></p>
+<ul class='fileul'>
+    <li>Nro_Factura
+    <li>Proveedor <a>(A,B,C)</a>
+    <li>Fecha <a>dd/mm/aaaa</a>
+    <li>Nro_Planta <a>1..4</a>
+    <li>Importe
+</ul>
+
+<h3 id="ejercicio-326">Ejercicio 3.26<a class="headerlink" href="#ejercicio-326" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se dispone de un archivo secuencial de facturas de una empresa de energía eléctrica, correspondientes a un año, con el siguiente formato:</p>
+<ul class='fileul'>
+    <li>Nro_Factura
+    <li>Nro_Usuario
+    <li>Zona
+    <li>Fecha
+    <li>Consumo
+</ul>
+
+<p>Se desea obtener un cuadro estadístico que informe los consumos y los importes totales facturados por mes discriminados por zona, con el siguiente formato:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Zona A</th>
+<th>Zona B</th>
+<th>Zona C</th>
+<th>Zona D</th>
+<th>Total por mes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enero</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>Febrero</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>Diciembre</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>Total por zona</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>Total General</td>
+</tr>
+</tbody>
+</table>
+<p>La ciudad está dividida en 4 Zonas (A,B,C,D), la tarifa por Kw. que cobra la empresa en cada una de ellas es: Zona A: $ 0,05, Zona B: $ 0,07, Zona C: $ 0,09 y Zona D: $ 0,13.</p>
+<h3 id="ejercicio-327">Ejercicio 3.27<a class="headerlink" href="#ejercicio-327" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se desea efectuar una estadística de ventas. Se cuenta para ello con una secuencia de las facturas emitidas, las cuales son identificadas por un Número; dicha secuencia contiene información relativa al cliente: su Número y Zona a la cual pertenece, como así también el Tipo de mercadería entregada, la Cantidad de unidades, el total gravado, el total exento de IVA y el valor del IVA.  Construya un algoritmo que emita por zona, y dentro de la zona por tipo de mercadería el total de unidades vendidas, el total gravado, el total exento y el total de IVA, y además un total general con la misma información.  Hay 9 zonas y 4 tipos de mercadería.</p>
+<h3 id="ejercicio-328">Ejercicio 3.28<a class="headerlink" href="#ejercicio-328" title="Permanent link">&para;</a></h3>
+<hr />
+<p>La Municipalidad de Resistencia desea obtener una estadística de los valores (en $) de los terrenos de la ciudad, discriminados por zona y ubicación dentro de la manzana (en esquina, interna, etc.), y los totales por zona y ubicación.
+El valor de cada final de cada terreno es igual a:</p>
+<p>Valor del Terreno = Superficie terreno (en M<sup>2</sup>) * valor del M<sup>2</sup> * coeficiente de incremento  </p>
+<p>Para ello cuenta con la siguiente información: </p>
+<ol>
+<li>
+<p>Un archivo de los terrenos con los siguientes datos:</p>
+<p><ul class='fileul'>
+    <li>Nro_Terreno
+    <li>Zona
+    <li>Ubicacion
+    <li>Superficie
+</ul></p>
+<p>Zona: codificadas de A a F<br />
+Ubicación: codificada de 1 a 10</p>
+</li>
+<li>
+<p>Un arreglo V que contiene los valores del M<sup>2</sup> por zona.</p>
+</li>
+</ol>
+<h3 id="ejercicio-329">Ejercicio 3.29<a class="headerlink" href="#ejercicio-329" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Dada una secuencia de texto que contiene información sobre mascotas, se desea generar un archivo de mascotas, teniendo en cuenta lo siguiente:</p>
+<p>En el texto vienen los siguientes datos: nombre de la mascota, encerrado ente asteriscos (*), inmediatamente a continuación una palabra de tres letras que identifica el tipo de documento y separado por un blanco, 8 posiciones numéricas que corresponden al número de documento del dueño, seguidas por un símbolo numeral (#) y, a continuación, la dirección de la persona, finalizando con un signo de fin de interrogación (?). 
+El final del texto está indicado por un símbolo de admiración (!).
+Se desconoce la longitud de la dirección, así como la del nombre de la mascota.</p>
+<p>El formato del registro de salida es</p>
+<ul class='fileul'>
+    <li>Tipo_Documento <a>N(1)</a>
+    <li>Numero <a>AN(8)</a>
+    <li>Nombre_Mascota <a>AN(30)</a>
+    <li>Direccion <a>AN(40)</a>
+</ul>
+
+<p>Si la sigla es DNI, el tipo es 0, si dice LCE el tipo es 1, si dice LEN el tipo es 2, para PAS es 3, para cualquier otra cadena de letras el tipo es 4.</p>
+<p>Al final del proceso informar cuantos registros se grabaron en el archivo de salida.</p>
+<h3 id="ejercicio-330">Ejercicio 3.30<a class="headerlink" href="#ejercicio-330" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Teniendo en cuenta el ejercicio 1.20 del TP2:  </p>
+<p><em>Se posee 2 secuencias (S1 y S2) con las cuales se desea generar una nueva secuencia (SAL) donde se intercalen las palabras de las secuencias de entrada, de la siguiente manera: copiar de S1 aquellas palabras que empiezan y terminan con la misma letra y de S2 aquellas palabras que posean al menos un digito numérico y además estén en posición par.</em></p>
+<p>Escribir un algoritmo que lo resuelva, considerando que las palabras tienen como máximo 10 caracteres.</p>
+<h3 id="ejercicio-331">Ejercicio 3.31<a class="headerlink" href="#ejercicio-331" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Se lleva a cabo una encuesta a fin de anticipar los posibles porcentajes de votos que obtendrán cada uno de los 4 partidos políticos de mayor peso en las elecciones. Los datos solicitados a los encuestados son: partido al que Algoritmos y Estructuras de Datos 2019 votara, edad, sexo y partido al que votó en las elecciones anteriores. Las respuestas se tabulan de acuerdo a los siguientes criterios:</p>
+<ul>
+<li>Partidos: P1, P2, P3, P4, Otro, En Blanco, Indeciso</li>
+<li>Edad: 18-25, 26-35, 36-45, 46-55, 56-65, +65</li>
+<li>Sexo: Femenino, Masculino</li>
+</ul>
+<p>Diseñe un algoritmo que, utilizando un arreglo de 4 dimensiones (partido al que votara, edad, sexo , partido al que votó), permita responder a las siguientes consultas:</p>
+<ul>
+<li>Cantidad de personas de cierta edad que votarán a un Partido dado.</li>
+<li>Cantidad de personas de un sexo dado que votarán a un determinado Partido.</li>
+<li>Cantidad de personas de cierta edad que votaron a un determinado Partido y actualmente votarán a otro Partido dado.</li>
+<li>Cantidad de personas de un sexo dado que votaron a un determinado Partido y actualmente votarán a otro Partido dado.</li>
+</ul>
+<h3 id="ejercicio-332">Ejercicio 3.32<a class="headerlink" href="#ejercicio-332" title="Permanent link">&para;</a></h3>
+<hr />
+<p>La municipalidad posee un archivo secuencial con los datos de todos los estacionamientos realizados en el mes de Octubre de 2018</p>
+<p>ESTACIONAMIENTOS</p>
+<table>
+<thead>
+<tr>
+<th>FECHA: fecha</th>
+<th>PATENTE: AN(7)</th>
+<th>HoraDesde: N(2)</th>
+<th>HoraHasta: N(2)</th>
+<th>Posta: 1..100</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>El costo es por multiplos de 1 hora. El costo por hora se calcula considerando la franja horaria del estacionamiento (siempre tomar el mayor costo), las franjas horarias son:</p>
+<ul>
+<li>de 00 a 06: costo por hora $9</li>
+<li>de 07 a 13: costo por hora $14</li>
+<li>de 14 a 19: costo por hora $12</li>
+<li>de 20 a 23: costo por hora $6</li>
+</ul>
+<p>Ejemplo: si una persona estaciona desde las 5 hasta las 10, son 6 horas de estacionamiento (10 - 5 + 1) y como se encuentra en dos franajas horarias <strong>se tiene que tomar la de mayor costo</strong> ($14 por hora). Por lo tanto el importe generado es 14 x 6 = 84. (<strong>NOTA</strong> a efectos de simplificar los calculos, solo calcular el costo de la franja horaria con respecto a la hora desde y la hora hasta).</p>
+<p>Se pide realizar un algoritmo que permita determinar:</p>
+<ul>
+<li>Posta con mayor importe generado</li>
+<li>Día con mayor cantidad de estacionamientos.</li>
+<li>En qué día y en que posta se generó la mayor cantidad de estacionamientos</li>
+</ul>
+<p>Otras Preguntas:</p>
+<ul>
+<li>¿Es posible calcular cual fue la zona horaria con mayor cantidad de estacionamientos? En caso de ser posible, realizar el algoritmo.</li>
+<li>¿Es posible determinar la cantidad maxima de permanencia que tienen los autos estacionados? En caso de ser posible, realizar el algoritmo.</li>
+</ul>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Pie">
+        
+          <a href="../2.3/" title="2.4. Archivos Indexados" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                2.4. Archivos Indexados
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../4/" title="4. Listas" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                4. Listas
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+
+        Algoritmos y Estructuras de Datos - 
+        
+        <a href="http://www.frre.utn.edu.ar">UTN FRRe</a>
+
+      </div>
+      <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/aed-frre/site" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs", "instant"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+        <script src="../../extra/js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
