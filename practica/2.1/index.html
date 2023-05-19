@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.5.10">
     
     
       
@@ -1330,15 +1330,15 @@ Para entender mejor el método usaremos un número correcto: 4013-7001-0977-4812
 A fin de año la Comisión Directiva de la Galería solicita que, a partir de toda esa información, se generen algunos informes.
 Se debe tener en cuenta lo siguiente:  </p>
 <ul>
-<li>En la secuencia ARTISTAS, se almacena el nombre de cada artista, lugar de nacimiento, edad, estilo de arte ('R' – Renacentista, 'M' – Arte Moderno, 'B' – Barroco, 'S' – Surrealismo) y cantidad de obras por artista. </li>
+<li>En la secuencia ARTISTAS, se almacena el estilo de arte ('R' – Renacentista, 'M' – Arte Moderno, 'B' – Barroco, 'S' – Surrealismo), el nombre de cada artista, lugar de nacimiento, edad y cantidad de obras por artista.</li>
 <li>Los datos de cada artista están separados entre si por el símbolo '+' y finalizan con el símbolo '?'.</li>
 <li>En la secuencia OBRAS, se almacena el nombre de la obra,  el año en que fue hecha, su precio, precedido siempre del signo '$' (solo 3 digitos) y su estado ('V' – Vendido, 'R' – Reservado, 'U' – Obra Única).</li>
 <li>Todos los datos de las obras están separados por el símbolo ',' y finalizan con el símbolo '/'.</li>
 <li>El creador de cada obra se determina de acuerdo al dato 'cantidad de obras' de la secuencia ARTISTAS, por ej.: el autor RENE BARTOL tiene 2 obras, por lo cual las primeras 2 obras de la secuencia OBRAS le pertenecen, las siguientes 6, pertenecen a JUAN B JUSTO, etc.  </li>
 </ul>
 <p>A continuación un ejemplo de ambas secuencias:</p>
-<p><strong>SECUENCIA ARTISTAS</strong><br />
-<code>RENE BARTOL+ROSARIO+34+M+2?JUAN B JUSTO+NEUQUEN+61+R+5?……..</code></p>
+<p><strong>SECUENCIA ARTISTAS</strong>
+<code>M+RENE BARTOL+ROSARIO+34+2?R+JUAN B JUSTO+NEUQUEN+61+5?……..</code></p>
 <p><strong>SECUENCIAS OBRAS</strong><br />
 <code>SOL Y PARANA,1997,$913,V/GRITO DE ESPERANZA,2003,$235,R/PENAS,1997,$781,V/………</code></p>
 <p>A partir de lo expuesto anteriormente, se pide:  </p>
