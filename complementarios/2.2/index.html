@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.10">
     
     
       
@@ -863,6 +863,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ejercicio-2219" class="md-nav__link">
+    Ejercicio 2.2.19
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1114,6 +1121,13 @@
           <li class="md-nav__item">
   <a href="#ejercicio-2218_1" class="md-nav__link">
     Ejercicio 2.2.18
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-2219" class="md-nav__link">
+    Ejercicio 2.2.19
   </a>
   
 </li>
@@ -2262,6 +2276,65 @@ La planilla que se pide es la siguiente</p>
 <h3 id="ejercicio-2218_1">Ejercicio 2.2.18<a class="headerlink" href="#ejercicio-2218_1" title="Permanent link">&para;</a></h3>
 <hr />
 <p>Suponer que los datos del ejercicio 2.01 se encuentran en 3 secuencias por separado, correspondientes a ISI, IQ y IEM, todas ordenadas por Nro. de Legajo. Generar un algoritmo que permita fusionar estas en una sola secuencia, respetando el orden y la estructura.</p>
+<h3 id="ejercicio-2219">Ejercicio 2.2.19<a class="headerlink" href="#ejercicio-2219" title="Permanent link">&para;</a></h3>
+<hr />
+<p>Por su gran desempeño en la cátedra de Algoritmos y Estructuras de Datos, MercadoPago lo ha contratado como pasante para desempeñar una importante tarea dentro de la empresa.</p>
+<p>Como primera actividad, se le ha solicitado desarrollar un algoritmo para actualizar los saldos de las cuentas de los usuarios. Para esto, se cuenta con los siguientes archivos:</p>
+<p><strong>CUENTAS</strong> archivo secuencial, ordenado por nro_usuario</p>
+<ul class='fileul'>
+    <li class='clave'>nro_usuario
+    <li>apellido
+    <li>nombre
+    <li>cvu
+    <li>cuil
+    <li>monto
+    <li>fecha_nacimiento
+    <li>fecha_alta
+    <li>estado(V o F)
+</ul>
+
+<p>y un archivo de movimientos</p>
+<p><strong>MOVIMIENTOS</strong> ordenado por nro_usuario, cod_movimiento</p>
+<ul class='fileul'>
+    <li class='clave'>nro_usuario
+    <li class='clave'>cod_movimiento
+    <li>cuil
+    <li>importe
+</ul>
+
+<p>Donde el cod_movimiento puede ser:</p>
+<ul>
+<li>1: Alta de un nuevo usuario</li>
+<li>2: Transferencia, el usuario ha realizado una transferencia de dinero</li>
+<li>3: Ingreso, el usuario ha recibido un ingreso de dinero</li>
+<li>4: Baja de la cuenta, la cuenta del usuario será desactivada (cambia el estado a Falso)</li>
+</ul>
+<p>En caso de que se trate del alta de un nuevo usuario, los datos personales del usuario serán capturados de una archivo del RENAPER, el cual se encuentra indexado por el campo cuil</p>
+<p><strong>RENAPER</strong> indexado por cuil</p>
+<ul class='fileul'>
+    <li class='clave'>cuil
+    <li>nombre
+    <li>apellido
+    <li>fecha_nacimiento
+    <li>direccion
+</ul>
+
+<p>Se le solicita además, que al finalizar, se informe:</p>
+<ul>
+<li>Número de nuevas cuentas</li>
+<li>Porcentaje de cuentas que se dieron de baja</li>
+</ul>
+<p>Para generar la fecha_alta, considerar la existencia de una funcion HOY() que devuelve como dato un registro con la fecha actual.</p>
+<p>Como segunda actividad, además de lo anterior, se le ha solicitado que, durante el proceso, mantenga actualizado el archivo indexado de USUARIOS, con los nuevos datos ingresados:</p>
+<p><strong>USUARIOS</strong> indexado por cuil</p>
+<ul class='fileul'>
+    <li class='clave'>cuil
+    <li>nro_usuario
+    <li>nombre
+    <li>apellido
+    <li>direccion
+    <li>fecha_nacimiento
+</ul>
 
 
   
