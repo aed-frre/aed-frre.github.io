@@ -1283,7 +1283,7 @@ sobre todas las palabras de la secuencia.</p>
 <p>Se desea calcular el costo de un  telegrama,  que se determina en función del número de palabras (que vale V1 cada una),  salvo que el promedio de letras por palabra supere las cinco letras, caso en que cada palabra vale V2.</p>
 <h3 id="ejercicio-2118">Ejercicio 2.1.18<a class="headerlink" href="#ejercicio-2118" title="Permanent link">&para;</a></h3>
 <hr />
-<p>Escribir un algoritmo que produzca una secuencia de salida que contenga una oración formada por por las palabras en posición par de cada oración de una secuencia texto de entrada, que además comienzan con la letra 'M'.</p>
+<p>Escribir un algoritmo que produzca una secuencia de salida que contenga una oración formada por las palabras en posición par de cada oración de una secuencia texto de entrada, que además comienzan con la letra 'M'.</p>
 <h3 id="ejercicio-2119">Ejercicio 2.1.19<a class="headerlink" href="#ejercicio-2119" title="Permanent link">&para;</a></h3>
 <hr />
 <p>Dada una secuencia de caracteres, generar otra secuencia con todas las palabras de tres caracteres. Informar el porcentaje de las mismas, sobre el total de palabras de la secuencia de entrada. Considerar que puede haber más de un blanco entre palabras.</p>
@@ -1291,11 +1291,11 @@ sobre todas las palabras de la secuencia.</p>
 <hr />
 <p>Se dispone de dos secuencias texto formadas por oraciones bimembres (sujeto y predicado, separados por comas ‘,’). Se desea una secuencia texto de salida formada por oraciones bimembres, de la siguiente forma:  </p>
 <p><em>El sujeto, de la secuencia 1, y el predicado, de la secuencia 2.</em></p>
-<p>Al finalizar informar cuantas oraciones tiene cada secuencia.</p>
+<p>Al finalizar informar cuántas oraciones tiene cada secuencia.</p>
 <h3 id="ejercicio-2121">Ejercicio 2.1.21<a class="headerlink" href="#ejercicio-2121" title="Permanent link">&para;</a></h3>
 <hr />
 <p>Se dispone de dos secuencias texto formadas por oraciones bimembres (sujeto y predicado, separados por comas ‘,’). Se desea una secuencia texto de salida formada por oraciones bimembres, de la siguiente forma:  </p>
-<p><em>El sujeto, de la secuencia 2, y el predicado, de la secuencia 1.</em></p>
+<p><em>El sujeto de la secuencia 2, y el predicado de la secuencia 1.</em></p>
 <p>Al finalizar informar cuantas oraciones tiene cada secuencia.</p>
 <h3 id="ejercicio-2122">Ejercicio 2.1.22<a class="headerlink" href="#ejercicio-2122" title="Permanent link">&para;</a></h3>
 <hr />
@@ -1314,16 +1314,16 @@ La nueva secuencia debe generarse de la siguiente manera: el número de document
 <p>Dada una secuencia texto de entrada que contiene palabras alfanuméricas, escribir un algoritmo que genere dos secuencias de salida. Una de ellas contendrá solo las palabras de la secuencia original que comienzan con vocal, en las cuales se reemplazarán todas las vocales por ‘#’, por ejemplo: entrada 'avión1', salida '#v##n1' y la otra será una secuencia numérica en la que se almacenarán las cantidades de vocales que se encontraron en cada una de las palabras que cumplieron la condición. Por final de proceso se deberá informar el promedio de palabras por oración.</p>
 <h3 id="ejercicio-2126">Ejercicio 2.1.26<a class="headerlink" href="#ejercicio-2126" title="Permanent link">&para;</a></h3>
 <hr />
-<p>Se posee 2 secuencias (S1 y S2) con las cuales se desea generar una nueva secuencia (SAL) donde se intercalen las palabras de las secuencias de entrada, de la siguiente manera: copiar de S1 aquellas palabras que empiezan y terminan con la misma letra y de S2 aquellas palabras que posean al menos un digito numérico y además estén en posición par.</p>
+<p>Se posee 2 secuencias (S1 y S2) con las cuales se desea generar una nueva secuencia (SAL) donde se intercalen las palabras de las secuencias de entrada, de la siguiente manera: copiar de S1 aquellas palabras que empiezan con una letra que ingresa el usuario y de S2 aquellas palabras que estén en posición par.</p>
 <h3 id="ejercicio-2127">Ejercicio 2.1.27<a class="headerlink" href="#ejercicio-2127" title="Permanent link">&para;</a></h3>
 <hr />
 <p>Elaborar un procedimiento que dada una secuencia de caracteres como entrada genere otra del mismo tipo como salida.<br />
 La secuencia de caracteres que se recibe incluye números de tarjetas de crédito, donde cada número  tiene 16 dígitos. Se desea obtener como resultado una nueva secuencia de salida con los números de tarjetas válidos.<br />
 El algoritmo para la validación de números de tarjetas de crédito es el siguiente:
-Para entender mejor el método usaremos un número correcto: 4013-7001-0977-4812, al que nos referiremos en el texto. Nos centramos en los caracteres que ocupan posiciones impares.  </p>
-<p>4 <strong>0</strong> 1 <strong>3</strong> 7 <strong>0</strong> 0 <strong>1</strong> 0 <strong>9</strong> 7 <strong>7</strong> 4 <strong>8</strong> 1 <strong>2</strong>  </p>
-<p>Por cada uno de ellos obtenemos el doble del valor que representan. Si el número resultante es menor que 9, se deja tal cual, en caso contrario, se le resta 9. En nuestro ejemplo: 4 * 2 = 8; 1 * 2 = 2; 7 * 2 = 14, mayor que nueve, se le resta 9. 14 - 9 = 5; y así sucesivamente. Si el número resultante de la suma de las multiplicaciones y de los dígitos en posición par, es múltiplo de 10, y a la vez menor o igual a 150, es un número de tarjeta válido.  </p>
-<p>Para nuestro ejemplo: 8+0+2+3+5+0+0+1+0+9+5+7+8+8+2+2 = 60; por lo tanto el número es válido.</p>
+Para entender mejor el método usaremos un número correcto: 4073-7001-0977-4812, al que nos referiremos en el texto. Nos centramos en los caracteres que ocupan las posiciones 1 y 3.  </p>
+<p>4 <strong>0</strong> 7 <strong>3</strong> 7 <strong>0</strong> 0 <strong>1</strong> 0 <strong>9</strong> 7 <strong>7</strong> 4 <strong>8</strong> 1 <strong>2</strong>  </p>
+<p>Por cada uno de ellos obtenemos el doble del valor que representan. Si el número resultante es menor que 9, se deja tal cual; en caso contrario, se le resta 9. En nuestro ejemplo: 4 * 2 = 8; 7 * 2 = 14, mayor que nueve, se le resta 9. 14 - 9 = 5. Si el número resultante de la suma de las multiplicaciones y de los dígitos en las posiciones 1 y 3, es múltiplo de 2 y a la vez menor o igual a 15, es un número de tarjeta válido.  </p>
+<p>Para nuestro ejemplo: 8 + 5 = 13; por lo tanto el número es válido.</p>
 <h3 id="ejercicio-2128">Ejercicio 2.1.28<a class="headerlink" href="#ejercicio-2128" title="Permanent link">&para;</a></h3>
 <hr />
 <p>La galería de pintura y arte nacional, PINTA DE ARGENTINA, almacena información sobre los artistas y sus obras de arte en secuencias de caracteres. Durante todo el año, las obras de arte son expuestas en eventos de subasta y exposición, en los cuales se comercializan al público en general.<br />
@@ -1331,28 +1331,28 @@ A fin de año la Comisión Directiva de la Galería solicita que, a partir de to
 Se debe tener en cuenta lo siguiente:  </p>
 <ul>
 <li>En la secuencia ARTISTAS, se almacena el estilo de arte ('R' – Renacentista, 'M' – Arte Moderno, 'B' – Barroco, 'S' – Surrealismo), el nombre de cada artista, lugar de nacimiento, edad y cantidad de obras por artista.</li>
-<li>Los datos de cada artista están separados entre si por el símbolo '+' y finalizan con el símbolo '?'.</li>
+<li>Los datos de cada artista están separados entre sí por el símbolo '+' y finalizan con el símbolo '?'.</li>
 <li>En la secuencia OBRAS, se almacena el nombre de la obra,  el año en que fue hecha, su precio, precedido siempre del signo '$' (solo 3 digitos) y su estado ('V' – Vendido, 'R' – Reservado, 'U' – Obra Única).</li>
 <li>Todos los datos de las obras están separados por el símbolo ',' y finalizan con el símbolo '/'.</li>
 <li>El creador de cada obra se determina de acuerdo al dato 'cantidad de obras' de la secuencia ARTISTAS, por ej.: el autor RENE BARTOL tiene 2 obras, por lo cual las primeras 2 obras de la secuencia OBRAS le pertenecen, las siguientes 6, pertenecen a JUAN B JUSTO, etc.  </li>
 </ul>
 <p>A continuación un ejemplo de ambas secuencias:</p>
-<p><strong>SECUENCIA ARTISTAS</strong>
-<code>M+RENE BARTOL+ROSARIO+34+2?R+JUAN B JUSTO+NEUQUEN+61+5?……..</code></p>
+<p><strong>SECUENCIA ARTISTAS</strong></p>
+<p><code>M+RENE BARTOL+ROSARIO+34+2?R+JUAN B JUSTO+NEUQUEN+61+5?…………</code></p>
 <p><strong>SECUENCIAS OBRAS</strong><br />
 <code>SOL Y PARANA,1997,$913,V/GRITO DE ESPERANZA,2003,$235,R/PENAS,1997,$781,V/………</code></p>
 <p>A partir de lo expuesto anteriormente, se pide:  </p>
 <ol>
-<li>Generar una secuencia de salida con información de los artistas Renacentistas. La secuencia debe contener el nombre del artista, su estilo de arte, seguido de sus obras (nombre y año de creación). Los datos correspondientes al mismo artista deben separarse entre sí con el signo '+' y finalizar con el signo '?'.  </li>
+<li>Generar una secuencia de salida con información de los artistas Renacentistas. La secuencia debe contener el nombre del artista seguido de sus obras (nombre y año de creación). Los datos correspondientes al mismo artista deben separarse entre sí con el signo '+' y finalizar con el signo '?'.  </li>
 <li>Al final del proceso informar:  <ol>
-<li>la mayor cantidad de obras vendidas por un artista.  </li>
-<li>el porcentaje de obras de artistas "renacentistas" sobre el total de obras.</li>
+<li>La mayor cantidad de obras vendidas por un artista.  </li>
+<li>El porcentaje de obras de artistas "renacentistas" sobre el total de obras.</li>
 </ol>
 </li>
 </ol>
 <h3 id="ejercicio-2129">Ejercicio 2.1.29<a class="headerlink" href="#ejercicio-2129" title="Permanent link">&para;</a></h3>
 <hr />
-<p>Dado el ejercicio anterior, pensar: cómo cambia el algoritmo solución en caso de que el 'estilo de arte' se indique al principio de los datos de cada artista en la secuencia de artistas? Por qué? Hacer el algoritmo.</p>
+<p>Dado el ejercicio anterior, pensar: cómo cambia el algoritmo solución en caso de que el 'estilo de arte' se indique al principio de los datos de cada artista en la secuencia de artistas. Por qué? Hacer el algoritmo.</p>
 <h3 id="ejercicio-2130">Ejercicio 2.1.30<a class="headerlink" href="#ejercicio-2130" title="Permanent link">&para;</a></h3>
 <hr />
 <p>El siguiente es un ejercicio del primer recuperatorio del primer parcial del año 2017:</p>
