@@ -894,7 +894,7 @@ LEER (valor)
 
 p:= Prim
 MIENTRAS (p &lt;&gt; nil) y (*p.dato &lt;&gt; valor) HACER
-    p = *p.prox
+    p := *p.prox
 FIN MIENTRAS
 
 SI (p &lt;&gt; nil) ENTONCES
@@ -909,7 +909,7 @@ FIN SI
 <pre><code>
 LEER (valor)
 
-Prim:= nil
+Prim := nil
 MIENTRAS (valor &lt;&gt; '*') HACER
     NUEVO (p)
     *p.Dato:= valor
@@ -930,9 +930,9 @@ MIENTRAS (valor &lt;&gt; '*') HACER
     *p.Prox:= nil
 
     SI Prim = nil ENTONCES
-        Prim = p
+        Prim := p
     SINO
-        *a.Prox:= p
+        *a.Prox := p
     FIN SI
     a:=p
     LEER(valor)
@@ -966,22 +966,22 @@ FIN SI
 <pre><code>
 LEER (valor) 
 
-q:= Prim
+p:= Prim
 
-MIENTRAS (q &lt;&gt; nil) y (*q.dato &lt;&gt; valor) HACER
-    a:= q
-    q:= *q.prox
+MIENTRAS (p &lt;&gt; nil) y (*p.dato &lt;&gt; valor) HACER
+    a:= p
+    p:= *p.prox
 FIN MIENTRAS
 
-SI (q = nil) ENTONCES
+SI (p = nil) ENTONCES
     Escribir ('Error, el valor no existe')
 SINO
     SI (a = nil) ENTONCES
-        Prim = *q.prox
+        Prim = *p.prox
     SINO
-        *a.prox:= *q.prox
+        *a.prox:= *p.prox
     FIN SI
-    DISPONER(q)
+    DISPONER(p)
 FIN SI
 
 </code></pre>
